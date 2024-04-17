@@ -14,6 +14,7 @@ import test_case_one_data from './test-data/test_case_one.json';
 /*----------TODO
     - Fix cart cleanup process
     - Change locator strategies
+    - reporting 
 */
 
 test.beforeEach("Setup", async function ({page}){

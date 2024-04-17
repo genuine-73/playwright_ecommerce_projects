@@ -75,39 +75,30 @@ export default class CartPOM {
         await this.returnToShopButton.click();
     }
 
-    // async calculateTotal(){
-    //     //TODO statement
-    // }
-
-    // async calculateTotal(): Promise<Number> {
-    //     const subTotal = await this.cartSubtotal;
-    //     const subTotalInt = subTotal ? parseInt(subTotal.substring(1)) : 0;
-    //     const discount = await this.cartDiscount;
-    //     const discountInt = discount ? parseInt(discount.substring(1)) : 0;
-    //     const shipping = await this.cartShippingCost;
-    //     const shippingInt = shipping ? parseInt(shipping.substring(1)) : 0;
-    //     return subTotalInt - discountInt + shippingInt;
-
-    // }
+    async convertToFloat(num: string): Promise<number> {
+        return Math.round(parseFloat(num.substring(1)) * 100);
+    }
 
     async getSubTotal(): Promise<number>{
         const subTotal = await this.cartSubtotal;
-        return subTotal ? parseFloat(subTotal.substring(1)) * 100 : 0;
+        return subTotal ? this.convertToFloat(subTotal) : 0;
+        
     }
 
     async getDiscount(): Promise<number>{
         const discount = await this.cartDiscount;
-        return discount ? parseFloat(discount.substring(1)) * 100: 0;
+        return discount ? this.convertToFloat(discount) : 0;
+    
     }
 
     async getTotal(): Promise<number>{
         const total = await this.cartTotal;
-        return total ? parseFloat(total.substring(1)) * 100 : 0;
+        return total ? this.convertToFloat(total) : 0;
     }
 
     async getShipping(): Promise<number>{
         const shipping = await this.cartShippingCost;
-        return shipping ? parseFloat(shipping.substring(1)) * 100 : 0;
+        return shipping ? this.convertToFloat(shipping) : 0;
     }
 
     async calculateExpectedTotal(): Promise<number>{
