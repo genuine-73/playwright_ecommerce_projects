@@ -69,7 +69,7 @@ export default class CartPOM {
         await this.removeCoupon.click();
         //await this.removeItem.click();
         for (const row of await this.removeItem.all()){
-             row.click();
+            row.click();
         }
         //await this.returnToShopButton.isVisible();
         await this.returnToShopButton.click();
@@ -120,6 +120,8 @@ export default class CartPOM {
         const subtotal = await this.getSubTotal();
         return (discount/100) * subtotal;
     }
+
+    
 
 
 }

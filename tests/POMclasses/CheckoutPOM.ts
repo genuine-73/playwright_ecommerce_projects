@@ -53,6 +53,7 @@ export default class CheckoutPOM {
     
     //service methods
     async enterBillingDetails(firstName: string, lastName: string, streetAddress: string, city: string, postCode: string, phoneNo: string, email: string){
+        
         await this.firstName.fill(firstName);
         await this.lastName.fill(lastName);
         await this.streetAddress.fill(streetAddress);
@@ -60,14 +61,19 @@ export default class CheckoutPOM {
         await this.postCode.fill(postCode);
         await this.phoneNo.fill(phoneNo);
         await this.emailAddress.fill(email);
+        
     }
 
     async clickCheckPayment() {
-        await this.checkPaymentRadioButton.click();
+        await this.checkPaymentRadioButton.check();
     }
 
     async clickPlaceOrder() {
         await this.placeOrderButton.click();
     }
+
+
+
+    
 
 }

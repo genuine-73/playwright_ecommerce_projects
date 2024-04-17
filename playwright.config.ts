@@ -10,6 +10,7 @@ export const STORAGE_STATE = 'setup.json'
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  timeout: 60 * 1000,
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -20,14 +21,21 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html'],['json', {outputFile: 'jsonreport/jsonreport.json'}],['junit', {outputFile: 'jnuitreport/test-results.xml'}]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://www.edgewordstraining.co.uk/demo-site/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    // Capture screenshot after each test failure.
+    screenshot: 'only-on-failure',
+
+    // Record trace only when retrying a test for the first time.
     trace: 'on-first-retry',
+
+    // Record video only when retrying a test for the first time.
+    video: 'on-first-retry',
 
     launchOptions: {slowMo: 1000},
   },
@@ -39,13 +47,19 @@ export default defineConfig({
       name: 'setup',
       testMatch: /global\.setup\.ts/,
       teardown: 'teardown',
+      use: {
+        viewport: null,
+        launchOptions:{args:['--start-maximized']},
+      }
     },
 
     {
       name: 'teardown',
       testMatch: /global\.teardown\.ts/,
       use: {
-        storageState: STORAGE_STATE
+        storageState: STORAGE_STATE,
+        viewport: null,
+        launchOptions:{args:['--start-maximized']},
       }
     },
 

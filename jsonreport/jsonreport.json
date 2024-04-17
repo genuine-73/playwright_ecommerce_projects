@@ -1,0 +1,277 @@
+{
+  "config": {
+    "configFile": "c:\\Users\\GenuineMathew\\playwright_project\\playwright.config.ts",
+    "rootDir": "c:/Users/GenuineMathew/playwright_project/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "jsonreport/jsonreport.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "jnuitreport/test-results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "setup",
+        "name": "setup",
+        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/global\\.setup\\.ts/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "teardown",
+        "name": "teardown",
+        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/global\\.teardown\\.ts/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.43.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "global.teardown.ts",
+      "file": "global.teardown.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Teardown",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "teardown",
+              "projectName": "teardown",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 4116,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Successfully closed the website\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-17T14:08:06.999Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05ed36a5ffdcbe241e99-6a59947d0855f7e68747",
+          "file": "global.teardown.ts",
+          "line": 5,
+          "column": 9
+        }
+      ]
+    },
+    {
+      "title": "global.setup.ts",
+      "file": "global.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Setup process",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 4304,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Successfully navigated to the ecommerce website\n"
+                    },
+                    {
+                      "text": "Successfully navigated to my account\n"
+                    },
+                    {
+                      "text": "Successfully logged into my account\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-17T14:07:50.319Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eb4d1272d956fb120f-3dda91cbd9f804cef367",
+          "file": "global.setup.ts",
+          "line": 7,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "ecommercePlaywright.spec.ts",
+      "file": "ecommercePlaywright.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Test Case Two: Placing Order",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 10070,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Successfully navigatedlogged into my account\n"
+                    },
+                    {
+                      "text": "Successfully navigated to the shop page\n"
+                    },
+                    {
+                      "text": "Successfully added an item to cart\n"
+                    },
+                    {
+                      "text": "Successfully navigated to cart page\n"
+                    },
+                    {
+                      "text": "Successfully stored order number\n"
+                    },
+                    {
+                      "text": "12686 #12686\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-17T14:07:56.032Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a4ed4ad9d41aa612c3ef-e5bac6147fe9be16d5a3",
+          "file": "ecommercePlaywright.spec.ts",
+          "line": 80,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-04-17T14:07:49.517Z",
+    "duration": 21760.173000000003,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

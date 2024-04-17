@@ -1,0 +1,33 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="21.7944">
+<testsuite name="global.teardown.ts" timestamp="2024-04-17T14:07:49.572Z" hostname="teardown" tests="1" failures="0" skipped="0" time="4.116" errors="0">
+<testcase name="Teardown" classname="global.teardown.ts" time="4.116">
+<system-out>
+<![CDATA[Successfully closed the website
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="global.setup.ts" timestamp="2024-04-17T14:07:49.572Z" hostname="setup" tests="1" failures="0" skipped="0" time="4.304" errors="0">
+<testcase name="Setup process" classname="global.setup.ts" time="4.304">
+<system-out>
+<![CDATA[Successfully navigated to the ecommerce website
+Successfully navigated to my account
+Successfully logged into my account
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ecommercePlaywright.spec.ts" timestamp="2024-04-17T14:07:49.572Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.07" errors="0">
+<testcase name="Test Case Two: Placing Order" classname="ecommercePlaywright.spec.ts" time="10.07">
+<system-out>
+<![CDATA[Successfully navigatedlogged into my account
+Successfully navigated to the shop page
+Successfully added an item to cart
+Successfully navigated to cart page
+Successfully stored order number
+12686 #12686
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
