@@ -1,32 +1,31 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="15.518021000000001">
-<testsuite name="global.teardown.ts" timestamp="2024-04-17T15:06:42.556Z" hostname="teardown" tests="1" failures="0" skipped="0" time="2.748" errors="0">
-<testcase name="Teardown" classname="global.teardown.ts" time="2.748">
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="32.259524">
+<testsuite name="global.teardown.ts" timestamp="2024-04-17T15:36:04.388Z" hostname="teardown" tests="1" failures="0" skipped="0" time="4.279" errors="0">
+<testcase name="Teardown" classname="global.teardown.ts" time="4.279">
 <system-out>
 <![CDATA[Successfully closed the website
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="global.setup.ts" timestamp="2024-04-17T15:06:42.556Z" hostname="setup" tests="1" failures="0" skipped="0" time="2.969" errors="0">
-<testcase name="Setup process" classname="global.setup.ts" time="2.969">
+<testsuite name="global.setup.ts" timestamp="2024-04-17T15:36:04.388Z" hostname="setup" tests="1" failures="0" skipped="0" time="9.419" errors="0">
+<testcase name="Setup process" classname="global.setup.ts" time="9.419">
 <system-out>
 <![CDATA[Successfully navigated to the ecommerce website
+Successfully dismissed a banner below
 Successfully navigated to my account
 Successfully logged into my account
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="ecommercePlaywright.spec.ts" timestamp="2024-04-17T15:06:42.556Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.628" errors="0">
-<testcase name="Test Case One: Applying Coupon" classname="ecommercePlaywright.spec.ts" time="7.628">
+<testsuite name="ecommercePlaywright.spec.ts" timestamp="2024-04-17T15:36:04.388Z" hostname="chromium" tests="1" failures="0" skipped="0" time="16.04" errors="0">
+<testcase name="Test Case One: Applying Coupon" classname="ecommercePlaywright.spec.ts" time="16.04">
 <system-out>
-<![CDATA[Successfully navigatedlogged into my account
+<![CDATA[Successfully logged into my account
 Successfully navigated to the shop page
 Successfully entered coupon code
 Successfully applied coupon code
 Successfully applied coupon edgewordsto cart
-Total from the website: £50.7 Total from calculating subtotal, discount and shipping: £50.7
-Discount from the website: £8.25 Discount from calculating subtotal, discount and shipping: £8.25
 ]]>
 </system-out>
 </testcase>

@@ -132,7 +132,7 @@
                 {
                   "workerIndex": 2,
                   "status": "passed",
-                  "duration": 2748,
+                  "duration": 4279,
                   "errors": [],
                   "stdout": [
                     {
@@ -141,7 +141,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-17T15:06:55.150Z",
+                  "startTime": "2024-04-17T15:36:32.176Z",
                   "attachments": []
                 }
               ],
@@ -176,11 +176,14 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 2969,
+                  "duration": 9419,
                   "errors": [],
                   "stdout": [
                     {
                       "text": "Successfully navigated to the ecommerce website\n"
+                    },
+                    {
+                      "text": "Successfully dismissed a banner below\n"
                     },
                     {
                       "text": "Successfully navigated to my account\n"
@@ -191,7 +194,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-17T15:06:43.077Z",
+                  "startTime": "2024-04-17T15:36:05.070Z",
                   "attachments": []
                 }
               ],
@@ -226,11 +229,11 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 7628,
+                  "duration": 16040,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Successfully navigatedlogged into my account\n"
+                      "text": "Successfully logged into my account\n"
                     },
                     {
                       "text": "Successfully navigated to the shop page\n"
@@ -243,17 +246,11 @@
                     },
                     {
                       "text": "Successfully applied coupon edgewordsto cart\n"
-                    },
-                    {
-                      "text": "Total from the website: £50.7 Total from calculating subtotal, discount and shipping: £50.7\n"
-                    },
-                    {
-                      "text": "Discount from the website: £8.25 Discount from calculating subtotal, discount and shipping: £8.25\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-17T15:06:46.854Z",
+                  "startTime": "2024-04-17T15:36:15.456Z",
                   "attachments": []
                 }
               ],
@@ -262,7 +259,7 @@
           ],
           "id": "a4ed4ad9d41aa612c3ef-8f8a90f005100995ad49",
           "file": "ecommercePlaywright.spec.ts",
-          "line": 28,
+          "line": 30,
           "column": 5
         }
       ]
@@ -270,8 +267,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-17T15:06:42.515Z",
-    "duration": 15500.535,
+    "startTime": "2024-04-17T15:36:04.331Z",
+    "duration": 32256.784,
     "expected": 3,
     "skipped": 0,
     "unexpected": 0,

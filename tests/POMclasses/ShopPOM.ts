@@ -16,8 +16,6 @@ export default class ShopPOM {
         this.viewCartButton = page.getByRole('link', { name: 'View cart' });
     }
 
-    as
-
     //service methods
     async clickAddToCart(){
         await this.addToCartButton.click();
@@ -25,18 +23,6 @@ export default class ShopPOM {
 
     async clickViewCartButton() {
         await this.viewCartButton.click();
-    }
-
-    async addToCartSuccess(): Promise<boolean>{
-        try
-        {
-            this.addToCartButton.click();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
     }
     
 

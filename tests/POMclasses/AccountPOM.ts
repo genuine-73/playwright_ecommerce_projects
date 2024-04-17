@@ -1,6 +1,7 @@
 import {Page, expect, Locator} from '@playwright/test'
 import AccountNavBarPOM from './AccountNavBarPOM';
 
+//inherits nav links (logout and orders) from account nav bar
 export default class AccountPOM extends AccountNavBarPOM {
 
     //variable declaration

@@ -12,7 +12,6 @@ export default class OrderSummaryPOM {
 
     //Locators
     get Ordernumber() {
-        //return this.page.getByText('Order number').innerText();
         return this.page.locator('#post-6 > div > div > div > ul > li.woocommerce-order-overview__order.order > strong').innerText();
     }
 

@@ -1,6 +1,7 @@
 import {Page, expect, Locator} from '@playwright/test'
 
 export default class CartPOM {
+
     //variable declaration
     page: Page;
 
@@ -53,6 +54,7 @@ export default class CartPOM {
     }
 
     // service method
+
     async enterCouponCode(coupon: string) {
         await this.couponCodeField.fill(coupon);
     }
@@ -71,34 +73,33 @@ export default class CartPOM {
         for (const row of await this.removeItem.all()){
             row.click();
         }
-        //await this.returnToShopButton.isVisible();
         await this.returnToShopButton.click();
     }
 
-    async convertToFloat(num: string): Promise<number> {
+    async convertToInt(num: string): Promise<number> {
         return Math.round(parseFloat(num.substring(1)) * 100);
     }
-
+    
     async getSubTotal(): Promise<number>{
         const subTotal = await this.cartSubtotal;
-        return subTotal ? this.convertToFloat(subTotal) : 0;
+        return subTotal ? this.convertToInt(subTotal) : 0;
         
-    }
-
-    async getDiscount(): Promise<number>{
-        const discount = await this.cartDiscount;
-        return discount ? this.convertToFloat(discount) : 0;
-    
     }
 
     async getTotal(): Promise<number>{
         const total = await this.cartTotal;
-        return total ? this.convertToFloat(total) : 0;
+        return total ? this.convertToInt(total) : 0;
     }
 
     async getShipping(): Promise<number>{
         const shipping = await this.cartShippingCost;
-        return shipping ? this.convertToFloat(shipping) : 0;
+        return shipping ? this.convertToInt(shipping) : 0;
+    }
+
+    async getDiscount(): Promise<number>{
+        const discount = await this.cartDiscount;
+        return discount ? this.convertToInt(discount) : 0;
+    
     }
 
     async calculateExpectedTotal(): Promise<number>{

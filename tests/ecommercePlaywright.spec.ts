@@ -11,16 +11,16 @@ import OrderAccount from './POMclasses/OrderAccount';
 import test_case_two_data from './test-data/test_case_two.json';
 import test_case_one_data from './test-data/test_case_one.json';
 
-/*----------TODO
-    - Fix cart cleanup process
+/*----------TODO---------
+    - README.md
     - Change locator strategies
-    - reporting 
 */
 
 test.beforeEach("Setup", async function ({page}){
+    
     //Navigate to page
     await page.goto('https://www.edgewordstraining.co.uk/demo-site/my-account/')
-    console.log("Successfully navigatedlogged into my account")
+    console.log("Successfully logged into my account")
 
 })
 
@@ -39,7 +39,7 @@ test("Test Case One: Applying Coupon", async function({page}){
     //Add item to cart
     const shop = new ShopPOM(page, test_case_one_data.item);
     await shop.clickAddToCart();
-    await expect(shop.addToCartButton).toBeVisible();
+    await expect(shop.addToCartButton, "the clothing item passed in  argument should exist").toBeVisible();
     console.log("Successfully entered coupon code")
 
     //Go to the cart page
@@ -50,7 +50,7 @@ test("Test Case One: Applying Coupon", async function({page}){
     const cart = new CartPOM(page);
     await cart.enterCouponCode(test_case_one_data.coupon);
     await cart.clickApplyCoupon();
-    await expect(cart.removeCoupon).toBeVisible();
+    await expect(cart.removeCoupon, "A valid coupon should be applied").toBeVisible();
     console.log("Successfully applied coupon " + test_case_one_data.coupon + "to cart");
 
     //Grab the string value
@@ -60,10 +60,8 @@ test("Test Case One: Applying Coupon", async function({page}){
     const actualDiscount = await cart.getDiscount();
 
     //Assert statement checks
-    expect(actualTotal).toEqual(expectedTotal);
-    console.log("Total from the website: £" + actualTotal/100 + " Total from calculating subtotal, discount and shipping: £" + expectedTotal/100);
-    expect(actualDiscount).toEqual(expectedDiscount);
-    console.log("Discount from the website: £" + actualDiscount/100 + " Discount from calculating subtotal, discount and shipping: £" + expectedDiscount/100);
+    expect.soft(actualTotal, "Total from the website: £" + actualTotal/100 + " Total from calculating subtotal, discount and shipping: £" + expectedTotal/100).toEqual(expectedTotal);
+    expect.soft(actualDiscount, "Discount from the website: £" + actualDiscount/100 + " Discount calculated: £" + expectedDiscount/100).toEqual(expectedDiscount);
     
     //cart cleanup process
     await cart.cartCleanUpProcess();
@@ -84,7 +82,7 @@ test("Test Case Two: Placing Order", async function({page}){
     //Add item to cart
     const shop = new ShopPOM(page, test_case_two_data.item);
     await shop.clickAddToCart();
-    await expect(shop.addToCartButton).toBeVisible();
+    await expect(shop.addToCartButton, "the clothing item passed in  argument should exist").toBeVisible();
     console.log("Successfully added an item to cart")
 
     //Go to the cart page
@@ -108,37 +106,37 @@ test("Test Case Two: Placing Order", async function({page}){
     let checkout = new CheckoutPOM(page);
     await checkout.enterBillingDetails(setFirstName, setLastName, setStreetAddress, setCity, setPostcode, setPhoneNo, setEmail);
 
-    // //Assert Statements to check text fields have been filled;
-    await expect(checkout.firstName).toHaveValue(setFirstName);
-    await expect(checkout.lastName).toHaveValue(setLastName);
-    await expect(checkout.streetAddress).toHaveValue(setStreetAddress);
-    await expect(checkout.city).toHaveValue(setCity);
-    await expect(checkout.postCode).toHaveValue(setPostcode);
-    await expect(checkout.phoneNo).toHaveValue(setPhoneNo);
-    await expect(checkout.emailAddress).toHaveValue(setEmail);
+    //Assert Statements to check text fields have been filled;
+    await expect(checkout.firstName, "The first name field should be: " + setFirstName).toHaveValue(setFirstName);
+    await expect(checkout.lastName, "The last name field should be: " + setLastName).toHaveValue(setLastName);
+    await expect(checkout.streetAddress, "The street address field should be: " + setStreetAddress).toHaveValue(setStreetAddress);
+    await expect(checkout.city, "The city field should be: " + setCity).toHaveValue(setCity);
+    await expect(checkout.postCode, "The postcode field should be: " + setPostcode).toHaveValue(setPostcode);
+    await expect(checkout.phoneNo, "The phoneNo field should be: " + setPhoneNo).toHaveValue(setPhoneNo);
+    await expect(checkout.emailAddress, "The email address field should be: " + setEmail).toHaveValue(setEmail);
     
     //Place order
     await checkout.clickCheckPayment();
     await checkout.clickPlaceOrder();
+    console.log("Successfully placed an order")
 
     //Get order number from Order Summary page
     const orderSummary = new OrderSummaryPOM(page);
     const orderNo = await orderSummary.Ordernumber;
-    console.log('Successfully stored order number');
+    console.log('Successfully assigned order number from order summary page to variable: ' + orderNo);
 
     //Navigate to account
     await navbar.goToAccount();
+    console.log("Successfully navigated to Account")
 
     //Get order number from My account -> order page
     await account.clickOrderTabButton();
     const orderTab = new OrderAccount(page);
     const latestOrderNo = await orderTab.latestOrderNumber;
-
-    // check if order number match
-    console.log(orderNo, latestOrderNo);
+    console.log("Successfully assigned order number from Account->Orders to variable: " + latestOrderNo)
 
     //check if the number match
-    expect(orderNo).toContain(latestOrderNo.substring(1));
+    expect(orderNo, `Order number from summary page: ${orderNo} | Order number from Orders Page ${latestOrderNo}`).toContain(latestOrderNo.substring(1));
 
 
 });

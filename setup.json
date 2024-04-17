@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "wordpress_sec_479efc27694de1240bbe63ecbb6e8baf",
-      "value": "hellogen%7C1713539205%7CJCuGZOgDSIQW3hn4SDKrDnXJbQPbuc1F62TK2JscMkM%7C50777c8023e19916b36e6c10bb3147572ae3ab0761519293e67237f4a0d7a3ae",
+      "value": "hellogen%7C1713540972%7CcKHZotMDUT7xeiLVVZCysDsGYYF0Lc4nvlTrPYXZldH%7C3be0704d7553ef38db78c14429f244bc50900c17782d02bab4bfb4ea0c869455",
       "domain": "www.edgewordstraining.co.uk",
       "path": "/demo-site/wp-content/plugins",
       "expires": -1,
@@ -12,7 +12,7 @@
     },
     {
       "name": "wordpress_sec_479efc27694de1240bbe63ecbb6e8baf",
-      "value": "hellogen%7C1713539205%7CJCuGZOgDSIQW3hn4SDKrDnXJbQPbuc1F62TK2JscMkM%7C50777c8023e19916b36e6c10bb3147572ae3ab0761519293e67237f4a0d7a3ae",
+      "value": "hellogen%7C1713540972%7CcKHZotMDUT7xeiLVVZCysDsGYYF0Lc4nvlTrPYXZldH%7C3be0704d7553ef38db78c14429f244bc50900c17782d02bab4bfb4ea0c869455",
       "domain": "www.edgewordstraining.co.uk",
       "path": "/demo-site/wp-admin",
       "expires": -1,
@@ -22,7 +22,7 @@
     },
     {
       "name": "wordpress_logged_in_479efc27694de1240bbe63ecbb6e8baf",
-      "value": "hellogen%7C1713539205%7CJCuGZOgDSIQW3hn4SDKrDnXJbQPbuc1F62TK2JscMkM%7C973fccd7eb3dd74102df23ab1bd4d0c01237d6b2097f84d12b7f611a4a4bb195",
+      "value": "hellogen%7C1713540972%7CcKHZotMDUT7xeiLVVZCysDsGYYF0Lc4nvlTrPYXZldH%7C37ad159d944e6c2ac4de26cedf5699cf2a8da1cfa9bd2aa032630657a0e44bc1",
       "domain": "www.edgewordstraining.co.uk",
       "path": "/demo-site/",
       "expires": -1,
