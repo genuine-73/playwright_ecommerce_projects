@@ -132,7 +132,7 @@
                 {
                   "workerIndex": 2,
                   "status": "passed",
-                  "duration": 4116,
+                  "duration": 3325,
                   "errors": [],
                   "stdout": [
                     {
@@ -141,7 +141,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-17T14:08:06.999Z",
+                  "startTime": "2024-04-17T14:19:18.471Z",
                   "attachments": []
                 }
               ],
@@ -176,7 +176,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 4304,
+                  "duration": 4738,
                   "errors": [],
                   "stdout": [
                     {
@@ -191,7 +191,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-17T14:07:50.319Z",
+                  "startTime": "2024-04-17T14:19:00.900Z",
                   "attachments": []
                 }
               ],
@@ -212,7 +212,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Test Case Two: Placing Order",
+          "title": "Test Case One: Applying Coupon",
           "ok": true,
           "tags": [],
           "tests": [
@@ -226,7 +226,7 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 10070,
+                  "duration": 10198,
                   "errors": [],
                   "stdout": [
                     {
@@ -236,30 +236,33 @@
                       "text": "Successfully navigated to the shop page\n"
                     },
                     {
-                      "text": "Successfully added an item to cart\n"
+                      "text": "Successfully entered coupon code\n"
                     },
                     {
-                      "text": "Successfully navigated to cart page\n"
+                      "text": "Successfully applied coupon code\n"
                     },
                     {
-                      "text": "Successfully stored order number\n"
+                      "text": "Successfully applied coupon edgewordsto cart\n"
                     },
                     {
-                      "text": "12686 #12686\n"
+                      "text": "Total from the website: £50.7 Total from calculating subtotal, discount and shipping: £50.7\n"
+                    },
+                    {
+                      "text": "Discount from the website: £8.25 Discount from calculating subtotal, discount and shipping: £8.25\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-17T14:07:56.032Z",
+                  "startTime": "2024-04-17T14:19:07.128Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "a4ed4ad9d41aa612c3ef-e5bac6147fe9be16d5a3",
+          "id": "a4ed4ad9d41aa612c3ef-8f8a90f005100995ad49",
           "file": "ecommercePlaywright.spec.ts",
-          "line": 80,
+          "line": 28,
           "column": 5
         }
       ]
@@ -267,8 +270,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-17T14:07:49.517Z",
-    "duration": 21760.173000000003,
+    "startTime": "2024-04-17T14:19:00.089Z",
+    "duration": 21877.883,
     "expected": 3,
     "skipped": 0,
     "unexpected": 0,

@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "wordpress_sec_479efc27694de1240bbe63ecbb6e8baf",
-      "value": "hellogen%7C1713535673%7CCK78gTRqcUAo6cTQqiwKJdAlo8zdtZpVxKTLPv97kkp%7C89e4c67b9ed5d399c5ac162fcb61c58d8b22372b9940c1b5a5ff28d16fe8a3f3",
+      "value": "hellogen%7C1713536344%7CpnVIf9rpVQQDCaabj8TomMmCXDdtf7VEAm6fkqOxwXx%7Cef7d011e53b8f324864371c82ce761762dc7e0976c5cceb57eb79b6455c11925",
       "domain": "www.edgewordstraining.co.uk",
       "path": "/demo-site/wp-content/plugins",
       "expires": -1,
@@ -12,7 +12,7 @@
     },
     {
       "name": "wordpress_sec_479efc27694de1240bbe63ecbb6e8baf",
-      "value": "hellogen%7C1713535673%7CCK78gTRqcUAo6cTQqiwKJdAlo8zdtZpVxKTLPv97kkp%7C89e4c67b9ed5d399c5ac162fcb61c58d8b22372b9940c1b5a5ff28d16fe8a3f3",
+      "value": "hellogen%7C1713536344%7CpnVIf9rpVQQDCaabj8TomMmCXDdtf7VEAm6fkqOxwXx%7Cef7d011e53b8f324864371c82ce761762dc7e0976c5cceb57eb79b6455c11925",
       "domain": "www.edgewordstraining.co.uk",
       "path": "/demo-site/wp-admin",
       "expires": -1,
@@ -22,40 +22,10 @@
     },
     {
       "name": "wordpress_logged_in_479efc27694de1240bbe63ecbb6e8baf",
-      "value": "hellogen%7C1713535673%7CCK78gTRqcUAo6cTQqiwKJdAlo8zdtZpVxKTLPv97kkp%7C2c78c9bc50c42f7928f9a687dc2a04bb1c084664cf01022d52b59297d7c80d49",
+      "value": "hellogen%7C1713536344%7CpnVIf9rpVQQDCaabj8TomMmCXDdtf7VEAm6fkqOxwXx%7C03863826544adf62b5c584991b2cf00ba66ec991763a1df5bf5d79b50ede30f2",
       "domain": "www.edgewordstraining.co.uk",
       "path": "/demo-site/",
       "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "woocommerce_items_in_cart",
-      "value": "1",
-      "domain": "www.edgewordstraining.co.uk",
-      "path": "/demo-site/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "woocommerce_cart_hash",
-      "value": "7579f2bb3491f2a364839fc7f2e5a4e9",
-      "domain": "www.edgewordstraining.co.uk",
-      "path": "/demo-site/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "wp_woocommerce_session_479efc27694de1240bbe63ecbb6e8baf",
-      "value": "1106%7C%7C1713535674%7C%7C1713532074%7C%7C1c6ad2e8213da081ca7bb23b3d4a8d14",
-      "domain": "www.edgewordstraining.co.uk",
-      "path": "/demo-site/",
-      "expires": 1713535674.620832,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"

@@ -8,11 +8,12 @@ import CheckoutPOM from './POMclasses/CheckoutPOM';
 import PopUpsPOM from './POMclasses/PopUpsPOM';
 import OrderSummaryPOM from './POMclasses/OrderSummaryPOM';
 import OrderAccount from './POMclasses/OrderAccount';
-import data from './test-data/test_case_two.json';
+import test_case_two_data from './test-data/test_case_two.json';
+import test_case_one_data from './test-data/test_case_one.json';
+
 /*----------TODO
-    - Fix test case two
-    - Change locator strategies - 6
-    - Push files into GitHub - 2
+    - Fix cart cleanup process
+    - Change locator strategies
 */
 
 test.beforeEach("Setup", async function ({page}){
@@ -26,6 +27,7 @@ test.beforeEach("Setup", async function ({page}){
 
 test("Test Case One: Applying Coupon", async function({page}){
 
+    //Instantiates Objects
     const navbar = new NavBarPOM(page);
     const account = new AccountPOM(page);
 
@@ -34,8 +36,7 @@ test("Test Case One: Applying Coupon", async function({page}){
     console.log("Successfully navigated to the shop page");
 
     //Add item to cart
-    const item = "Belt";
-    const shop = new ShopPOM(page, item);
+    const shop = new ShopPOM(page, test_case_one_data.item);
     await shop.clickAddToCart();
     await expect(shop.addToCartButton).toBeVisible();
     console.log("Successfully entered coupon code")
@@ -46,11 +47,10 @@ test("Test Case One: Applying Coupon", async function({page}){
 
     //Enter Coupon Code
     const cart = new CartPOM(page);
-    const coupon = 'edgewords';
-    await cart.enterCouponCode(coupon);
+    await cart.enterCouponCode(test_case_one_data.coupon);
     await cart.clickApplyCoupon();
     await expect(cart.removeCoupon).toBeVisible();
-    console.log("Successfully applied coupon " + coupon + "to cart");
+    console.log("Successfully applied coupon " + test_case_one_data.coupon + "to cart");
 
     //Grab the string value
     const expectedTotal = await cart.calculateExpectedTotal();
@@ -72,6 +72,7 @@ test("Test Case One: Applying Coupon", async function({page}){
 
 test("Test Case Two: Placing Order", async function({page}){
 
+    //Instantiates Objects
     const navbar = new NavBarPOM(page);
     const account = new AccountPOM(page);
 
@@ -80,7 +81,7 @@ test("Test Case Two: Placing Order", async function({page}){
     console.log("Successfully navigated to the shop page");
 
     //Add item to cart
-    const shop = new ShopPOM(page, data.item);
+    const shop = new ShopPOM(page, test_case_two_data.item);
     await shop.clickAddToCart();
     await expect(shop.addToCartButton).toBeVisible();
     console.log("Successfully added an item to cart")
@@ -94,13 +95,13 @@ test("Test Case Two: Placing Order", async function({page}){
     await cart.clickProceedToCheckout();
 
     //Setup variables for filling out billing details
-    const setFirstName = data.firstname;
-    const setLastName = data.lastname;
-    const setStreetAddress = data.streetAddress;
-    const setCity = data.city;
-    const setPostcode = data.postcode;
-    const setPhoneNo = data.phoneNo;
-    const setEmail = data.email;
+    const setFirstName = test_case_two_data.firstname;
+    const setLastName = test_case_two_data.lastname;
+    const setStreetAddress = test_case_two_data.streetAddress;
+    const setCity = test_case_two_data.city;
+    const setPostcode = test_case_two_data.postcode;
+    const setPhoneNo = test_case_two_data.phoneNo;
+    const setEmail = test_case_two_data.email;
 
     //Fill out the billing details and place an order
     let checkout = new CheckoutPOM(page);

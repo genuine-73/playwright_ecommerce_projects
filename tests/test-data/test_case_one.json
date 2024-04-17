@@ -1,16 +1,7 @@
-[
-    {
-        "username": "hellogen@edgewords.co.uk",
-        "password": "HelloEdgewords!23",
-	    "item"	  : "Belt",
-	    "coupon"  : "edgewords",
-        "discount": 15
-    },
-    {
-        "username": "hellogen@edgewords.co.uk",
-        "password": "HelloEdgewords!23",
-	    "item"	  : "Belt",
-	    "coupon"  : "nfocus",
-        "discount" : 25
-    }
-]
+{
+    "username": "hellogen@edgewords.co.uk",
+    "password": "HelloEdgewords!23",
+    "item"	  : "Belt",
+    "coupon"  : "edgewords",
+    "discount": 15
+}

@@ -1,14 +1,14 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="21.7944">
-<testsuite name="global.teardown.ts" timestamp="2024-04-17T14:07:49.572Z" hostname="teardown" tests="1" failures="0" skipped="0" time="4.116" errors="0">
-<testcase name="Teardown" classname="global.teardown.ts" time="4.116">
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="21.971882">
+<testsuite name="global.teardown.ts" timestamp="2024-04-17T14:19:00.147Z" hostname="teardown" tests="1" failures="0" skipped="0" time="3.325" errors="0">
+<testcase name="Teardown" classname="global.teardown.ts" time="3.325">
 <system-out>
 <![CDATA[Successfully closed the website
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="global.setup.ts" timestamp="2024-04-17T14:07:49.572Z" hostname="setup" tests="1" failures="0" skipped="0" time="4.304" errors="0">
-<testcase name="Setup process" classname="global.setup.ts" time="4.304">
+<testsuite name="global.setup.ts" timestamp="2024-04-17T14:19:00.147Z" hostname="setup" tests="1" failures="0" skipped="0" time="4.738" errors="0">
+<testcase name="Setup process" classname="global.setup.ts" time="4.738">
 <system-out>
 <![CDATA[Successfully navigated to the ecommerce website
 Successfully navigated to my account
@@ -17,15 +17,16 @@ Successfully logged into my account
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="ecommercePlaywright.spec.ts" timestamp="2024-04-17T14:07:49.572Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.07" errors="0">
-<testcase name="Test Case Two: Placing Order" classname="ecommercePlaywright.spec.ts" time="10.07">
+<testsuite name="ecommercePlaywright.spec.ts" timestamp="2024-04-17T14:19:00.147Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.198" errors="0">
+<testcase name="Test Case One: Applying Coupon" classname="ecommercePlaywright.spec.ts" time="10.198">
 <system-out>
 <![CDATA[Successfully navigatedlogged into my account
 Successfully navigated to the shop page
-Successfully added an item to cart
-Successfully navigated to cart page
-Successfully stored order number
-12686 #12686
+Successfully entered coupon code
+Successfully applied coupon code
+Successfully applied coupon edgewordsto cart
+Total from the website: £50.7 Total from calculating subtotal, discount and shipping: £50.7
+Discount from the website: £8.25 Discount from calculating subtotal, discount and shipping: £8.25
 ]]>
 </system-out>
 </testcase>
