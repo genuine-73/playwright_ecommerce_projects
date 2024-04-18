@@ -132,16 +132,19 @@
                 {
                   "workerIndex": 2,
                   "status": "passed",
-                  "duration": 4279,
+                  "duration": 2591,
                   "errors": [],
                   "stdout": [
+                    {
+                      "text": "Now in global teardown\n"
+                    },
                     {
                       "text": "Successfully closed the website\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-17T15:36:32.176Z",
+                  "startTime": "2024-04-18T10:57:17.436Z",
                   "attachments": []
                 }
               ],
@@ -176,9 +179,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 9419,
+                  "duration": 3196,
                   "errors": [],
                   "stdout": [
+                    {
+                      "text": "Now in globalsetup\n"
+                    },
                     {
                       "text": "Successfully navigated to the ecommerce website\n"
                     },
@@ -194,7 +200,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-17T15:36:05.070Z",
+                  "startTime": "2024-04-18T10:57:04.920Z",
                   "attachments": []
                 }
               ],
@@ -229,7 +235,7 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 16040,
+                  "duration": 7782,
                   "errors": [],
                   "stdout": [
                     {
@@ -250,7 +256,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-17T15:36:15.456Z",
+                  "startTime": "2024-04-18T10:57:08.975Z",
                   "attachments": []
                 }
               ],
@@ -259,7 +265,7 @@
           ],
           "id": "a4ed4ad9d41aa612c3ef-8f8a90f005100995ad49",
           "file": "ecommercePlaywright.spec.ts",
-          "line": 30,
+          "line": 32,
           "column": 5
         }
       ]
@@ -267,8 +273,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-17T15:36:04.331Z",
-    "duration": 32256.784,
+    "startTime": "2024-04-18T10:57:04.325Z",
+    "duration": 15806.989,
     "expected": 3,
     "skipped": 0,
     "unexpected": 0,

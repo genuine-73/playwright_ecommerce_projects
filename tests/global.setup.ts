@@ -5,6 +5,9 @@ import NavBarPOM from './POMclasses/NavBarPOM';
 import AccountPOM from './POMclasses/AccountPOM';
 
 setup('Setup process', async ({page})=>{
+
+    console.log("Now in globalsetup");
+
     //navigate to ecommerce site
     await page.goto('./')
     console.log("Successfully navigated to the ecommerce website")
@@ -24,6 +27,8 @@ setup('Setup process', async ({page})=>{
     await account.login('hellogen@edgewords.co.uk', 'HelloEdgewords!23');
     expect(account.logoutButton, "should be logged in").toBeVisible();
     await page.waitForURL("https://www.edgewordstraining.co.uk/demo-site/my-account/");
+
+    //Stores login state so we can start from account every time test is run
     await page.context().storageState({path: STORAGE_STATE});
     console.log("Successfully logged into my account");
     

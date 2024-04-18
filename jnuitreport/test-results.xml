@@ -1,16 +1,18 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="32.259524">
-<testsuite name="global.teardown.ts" timestamp="2024-04-17T15:36:04.388Z" hostname="teardown" tests="1" failures="0" skipped="0" time="4.279" errors="0">
-<testcase name="Teardown" classname="global.teardown.ts" time="4.279">
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="15.847819000000001">
+<testsuite name="global.teardown.ts" timestamp="2024-04-18T10:57:04.364Z" hostname="teardown" tests="1" failures="0" skipped="0" time="2.591" errors="0">
+<testcase name="Teardown" classname="global.teardown.ts" time="2.591">
 <system-out>
-<![CDATA[Successfully closed the website
+<![CDATA[Now in global teardown
+Successfully closed the website
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="global.setup.ts" timestamp="2024-04-17T15:36:04.388Z" hostname="setup" tests="1" failures="0" skipped="0" time="9.419" errors="0">
-<testcase name="Setup process" classname="global.setup.ts" time="9.419">
+<testsuite name="global.setup.ts" timestamp="2024-04-18T10:57:04.364Z" hostname="setup" tests="1" failures="0" skipped="0" time="3.196" errors="0">
+<testcase name="Setup process" classname="global.setup.ts" time="3.196">
 <system-out>
-<![CDATA[Successfully navigated to the ecommerce website
+<![CDATA[Now in globalsetup
+Successfully navigated to the ecommerce website
 Successfully dismissed a banner below
 Successfully navigated to my account
 Successfully logged into my account
@@ -18,8 +20,8 @@ Successfully logged into my account
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="ecommercePlaywright.spec.ts" timestamp="2024-04-17T15:36:04.388Z" hostname="chromium" tests="1" failures="0" skipped="0" time="16.04" errors="0">
-<testcase name="Test Case One: Applying Coupon" classname="ecommercePlaywright.spec.ts" time="16.04">
+<testsuite name="ecommercePlaywright.spec.ts" timestamp="2024-04-18T10:57:04.364Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.782" errors="0">
+<testcase name="Test Case One: Applying Coupon" classname="ecommercePlaywright.spec.ts" time="7.782">
 <system-out>
 <![CDATA[Successfully logged into my account
 Successfully navigated to the shop page

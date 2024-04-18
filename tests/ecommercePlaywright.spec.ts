@@ -11,9 +11,12 @@ import OrderAccount from './POMclasses/OrderAccount';
 import test_case_two_data from './test-data/test_case_two.json';
 import test_case_one_data from './test-data/test_case_one.json';
 
+
 /*----------TODO---------
-    - README.md
     - Change locator strategies
+    - Improve codebase by using test fixtures
+    - check for correct naming conventions
+    - Improve teardown method and cleanup method
 */
 
 test.beforeEach("Setup", async function ({page}){
@@ -30,7 +33,6 @@ test("Test Case One: Applying Coupon", async function({page}){
 
     //Instantiates Objects
     const navbar = new NavBarPOM(page);
-    const account = new AccountPOM(page);
 
     //navigates to shop page
     await navbar.goToShop();
@@ -39,7 +41,7 @@ test("Test Case One: Applying Coupon", async function({page}){
     //Add item to cart
     const shop = new ShopPOM(page, test_case_one_data.item);
     await shop.clickAddToCart();
-    await expect(shop.addToCartButton, "the clothing item passed in  argument should exist").toBeVisible();
+    await expect(shop.viewCartButton, "the clothing item passed in  argument should exist").toBeVisible();
     console.log("Successfully entered coupon code")
 
     //Go to the cart page
@@ -82,7 +84,7 @@ test("Test Case Two: Placing Order", async function({page}){
     //Add item to cart
     const shop = new ShopPOM(page, test_case_two_data.item);
     await shop.clickAddToCart();
-    await expect(shop.addToCartButton, "the clothing item passed in  argument should exist").toBeVisible();
+    await expect(shop.viewCartButton, "the clothing item passed in  argument should exist").toBeVisible();
     console.log("Successfully added an item to cart")
 
     //Go to the cart page
@@ -140,50 +142,4 @@ test("Test Case Two: Placing Order", async function({page}){
 
 
 });
-
-// for (let credentials of data) {
-
-//     test(`Running coupon tests: ${credentials.coupon}, ${credentials.coupon}`, async ({ page }) => {
-    
-//         //Instantiates objects
-//     const navbar = new NavBarPOM(page);
-//     const account = new AccountPOM(page);
-
-//     //navigates to shop page
-//     await navbar.goToShop();
-//     console.log("Successfully navigated to the shop page");
-
-//     //Add item to cart
-//     const item = new ShopPOM(page, credentials.item)
-//     await item.clickAddToCart();
-//     console.log("Successfully entered coupon code")
-
-//     //Go to the cart page
-//     await item.clickViewCartButton();
-//     console.log("Successfully applied coupon code");
-
-//     //Enter Coupon Code
-//     const cart = new CartPOM(page);
-//     const coupon = 'edgewords';
-//     await cart.enterCouponCode(credentials.coupon);
-//     await cart.clickApplyCoupon();
-//     console.log("Successfully applied coupon " + coupon + "to cart");
-
-//     //Grab the string value
-//     const expectedTotal = await cart.calculateExpectedTotal();
-//     const actualTotal = await cart.getTotal();
-//     const expectedDiscount = await cart.calculateDiscount(credentials.discount);
-//     const actualDiscount = await cart.getDiscount();
-
-//     //Assert statement checks
-//     expect(actualTotal).toEqual(expectedTotal);
-//     console.log("Total from the website: £" + actualTotal/100 + " Total from calculating subtotal, discount and shipping: £" + expectedTotal/100);
-//     expect(actualDiscount).toEqual(expectedDiscount);
-//     console.log("Discount from the website: £" + actualDiscount/100 + " Discount from calculating subtotal, discount and shipping: £" + expectedDiscount/100);
-    
-//     //cart cleanup process
-//     await cart.cartCleanUpProcess();
-//     });
-
-// }
 
