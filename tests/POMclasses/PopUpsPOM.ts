@@ -1,4 +1,4 @@
-import {Page, Locator} from '@playwright/test'
+import {Page, expect, Locator} from '@playwright/test'
 
 export default class PopUpsPOM {
     //variable declaration
@@ -16,6 +16,7 @@ export default class PopUpsPOM {
 
     //service methods
     async clickDismissButton(){
+        await expect(this.dismissButton).toBeVisible();
         await this.dismissButton.click();
     }
 }

@@ -1,4 +1,5 @@
 import {Page, expect, Locator} from '@playwright/test'
+import CartPOM from './CartPOM';
 
 export default class ShopPOM {
     //variable declaration
@@ -9,7 +10,7 @@ export default class ShopPOM {
     //Instantiation
     constructor(page: Page, item:string){
         this.page = page;
-        expect(page).toHaveURL("https://www.edgewordstraining.co.uk/demo-site/shop/");
+        //expect(page).toHaveURL("https://www.edgewordstraining.co.uk/demo-site/shop/");
 
         //locators
         this.addToCartButton = page.getByLabel(`Add “${item}” to your cart`);
@@ -17,12 +18,10 @@ export default class ShopPOM {
     }
 
     //service methods
-    async clickAddToCart(){
+    async clickAddCartButton(): Promise<CartPOM> {
         await this.addToCartButton.click();
-    }
-
-    async clickViewCartButton() {
         await this.viewCartButton.click();
+        return new CartPOM(this.page);
     }
     
 

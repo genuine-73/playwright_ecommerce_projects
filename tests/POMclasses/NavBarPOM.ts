@@ -1,4 +1,8 @@
 import {Page, Locator} from '@playwright/test'
+import CartPOM from './CartPOM';
+import ShopPOM from './ShopPOM';
+import AccountNavBarPOM from './AccountNavBarPOM';
+import AccountPOM from './AccountPOM';
 
 export default class NavBarPOM {
 
@@ -11,14 +15,6 @@ export default class NavBarPOM {
     }
 
     //Locators
-    get cart() {
-        return this.page.locator('#menu-item-44').getByRole('link', { name: 'Cart' });
-    }
-
-    get checkout() {
-        return this.page.locator('#menu-item-45').getByRole('link', { name: 'Checkout' });
-    }
-
     get shop() {
         return this.page.locator('#menu-item-43').getByRole('link', { name: 'Shop' });  
     }
@@ -28,20 +24,18 @@ export default class NavBarPOM {
     }
 
     //Service methods
-    async goToCart(){
-        await this.cart.click()
-    }
-
-    async goToCheckout(){
-        await this.checkout.click()
-    }
-
     async goToShop(){
-        await this.shop.click()
+        await this.shop.click();
     }
 
     async goToAccount(){
-        await this.account.click()}
+        await this.account.click()
+    }
+
+    async goToAccountSuccess(): Promise<AccountPOM>{
+        await this.account.click();
+        return new AccountPOM(this.page);
+    }
 
 
 }

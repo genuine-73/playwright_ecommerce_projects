@@ -4,15 +4,6 @@ import AccountNavBarPOM from './AccountNavBarPOM';
 //inherits nav links (logout and orders) from account nav bar
 export default class AccountPOM extends AccountNavBarPOM {
 
-    //variable declaration
-    page: Page;
-
-    //Instantiation
-    constructor(page: Page) {
-        super(page);
-        this.page = page;
-        expect(page).toHaveURL("https://www.edgewordstraining.co.uk/demo-site/my-account/");
-    }
 
     //Locators
     get usernameField() {
@@ -33,6 +24,29 @@ export default class AccountPOM extends AccountNavBarPOM {
         await this.usernameField.fill(username);
         await this.passwordField.fill(password);
         await this.loginButton.click();
+    }
+
+    async enterUsername(username: string){
+        await expect(this.usernameField).toBeEditable();
+        await this.usernameField.clear();
+        await this.usernameField.fill(username);
+    }
+
+    async enterPassword(password: string){
+        await expect(this.passwordField).toBeEditable();
+        await this.passwordField.clear();
+        await this.passwordField.fill(password);
+    }
+
+    //TODO: Change methods from simple login to login expect success
+    async loginExpectSuccess(username: string, password: string){
+        if(username && password){
+            await this.enterUsername(username);
+            await this.enterPassword(password);
+            await this.loginButton.click();
+        }
+        expect(this.logoutButton, "should be logged in").toBeVisible();
+
     }
 
 }

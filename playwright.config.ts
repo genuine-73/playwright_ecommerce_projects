@@ -24,10 +24,10 @@ export default defineConfig({
   reporter: [['html'],['json', {outputFile: 'jsonreport/jsonreport.json'}],['junit', {outputFile: 'jnuitreport/test-results.xml'}]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://www.edgewordstraining.co.uk/demo-site/',
 
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     // Capture screenshot after each test failure.
     screenshot: 'only-on-failure',
 
@@ -35,7 +35,7 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     // Record video only when retrying a test for the first time.
-    video: 'on-first-retry',
+    video: 'on',
 
     launchOptions: {slowMo: 1000},
   },

@@ -132,7 +132,7 @@
                 {
                   "workerIndex": 2,
                   "status": "passed",
-                  "duration": 2591,
+                  "duration": 3298,
                   "errors": [],
                   "stdout": [
                     {
@@ -144,7 +144,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-18T10:57:17.436Z",
+                  "startTime": "2024-04-23T10:26:08.052Z",
                   "attachments": []
                 }
               ],
@@ -179,7 +179,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 3196,
+                  "duration": 4229,
                   "errors": [],
                   "stdout": [
                     {
@@ -200,7 +200,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-18T10:57:04.920Z",
+                  "startTime": "2024-04-23T10:25:50.582Z",
                   "attachments": []
                 }
               ],
@@ -215,8 +215,8 @@
       ]
     },
     {
-      "title": "ecommercePlaywright.spec.ts",
-      "file": "ecommercePlaywright.spec.ts",
+      "title": "ecommerce-project.spec.ts",
+      "file": "ecommerce-project.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
@@ -235,7 +235,7 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 7782,
+                  "duration": 11094,
                   "errors": [],
                   "stdout": [
                     {
@@ -245,10 +245,7 @@
                       "text": "Successfully navigated to the shop page\n"
                     },
                     {
-                      "text": "Successfully entered coupon code\n"
-                    },
-                    {
-                      "text": "Successfully applied coupon code\n"
+                      "text": "Successfully added an item to cart\n"
                     },
                     {
                       "text": "Successfully applied coupon edgewordsto cart\n"
@@ -256,16 +253,16 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-18T10:57:08.975Z",
+                  "startTime": "2024-04-23T10:25:55.928Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "a4ed4ad9d41aa612c3ef-8f8a90f005100995ad49",
-          "file": "ecommercePlaywright.spec.ts",
-          "line": 32,
+          "id": "6ac070fa5b0b1d4593b1-0d4fb08f286e43bf58ac",
+          "file": "ecommerce-project.spec.ts",
+          "line": 10,
           "column": 5
         }
       ]
@@ -273,8 +270,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-18T10:57:04.325Z",
-    "duration": 15806.989,
+    "startTime": "2024-04-23T10:25:49.810Z",
+    "duration": 21679.712000000003,
     "expected": 3,
     "skipped": 0,
     "unexpected": 0,

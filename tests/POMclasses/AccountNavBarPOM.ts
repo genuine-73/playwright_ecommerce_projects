@@ -1,4 +1,5 @@
 import {Page, Locator} from '@playwright/test'
+import OrderAccount from './OrderAccount';
 
 export default class AccountNavBarPOM {
     

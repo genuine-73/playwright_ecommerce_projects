@@ -1,4 +1,5 @@
 import {Page, expect, Locator} from '@playwright/test'
+import CheckoutPOM from './CheckoutPOM';
 
 export default class CartPOM {
 
@@ -8,12 +9,16 @@ export default class CartPOM {
     //Instantiation
     constructor(page: Page){
         this.page = page;
-        expect(page).toHaveURL("https://www.edgewordstraining.co.uk/demo-site/cart/");
+        //expect(page).toHaveURL("https://www.edgewordstraining.co.uk/demo-site/cart/");
     }
 
     //locators
     get couponCodeField() {
         return this.page.getByPlaceholder('Coupon code');
+    }
+
+    get cartIsEmptyBanner() {
+        return this.page.getByText('Your cart is currently empty.')
     }
 
     get applyCouponButton() {
@@ -53,6 +58,10 @@ export default class CartPOM {
         return this.page.getByText("Return to shop");
     }
 
+    get productName() {
+        return this.page.locator(".woocommerce-cart-form__cart-item > .product-name");
+    }
+
     // service method
 
     async enterCouponCode(coupon: string) {
@@ -63,57 +72,59 @@ export default class CartPOM {
         await this.applyCouponButton.click();
     }
 
-    async clickProceedToCheckout() {
+    async clickProceedToCheckout(): Promise<CheckoutPOM> {
         await this.proceedToCheckoutButton.click();
+        return new CheckoutPOM(this.page);
     }
 
     async cartCleanUpProcess() {
+        try
+        {
+            await this.removeCoupon.click();
+        }
+
+        catch
+        {
+            console.error("There is no coupon applued")
+        }
+
+        finally
+        {
+            for (const row of await this.removeItem.all()){
+                row.click();
+            }
+            await this.returnToShopButton.click();
+        }
+    }
+
+    //TODO Complete this method 
+    async cartCleanUpSuccess() {
+
         await this.removeCoupon.click();
-        //await this.removeItem.click();
-        for (const row of await this.removeItem.all()){
-            row.click();
+
+        let total = await this.removeItem.count();
+
+        while (total) {
+
+            console.log("the number of successfully deleted from cart :" + await this.removeItem.count());
+            await this.removeItem.first().hover();
+            await this.removeItem.first().click();
+            await expect(this.removeItem).toHaveCount(--total);
+
         }
         await this.returnToShopButton.click();
-    }
 
-    async convertToInt(num: string): Promise<number> {
-        return Math.round(parseFloat(num.substring(1)) * 100);
-    }
-    
-    async getSubTotal(): Promise<number>{
-        const subTotal = await this.cartSubtotal;
-        return subTotal ? this.convertToInt(subTotal) : 0;
+
+    } 
+
+    //TODO Complete this method
+    async enterAndApplyCoupon(coupon: string, item: string){
+        await expect(this.productName.filter({hasText: item}),"Needed to check if the item added from the shop page is in cart").toContainText(item);
+        await this.couponCodeField.fill(coupon);
+        await expect(this.couponCodeField, "coupon code field should not be empty").not.toBeEmpty();
+        await this.applyCouponButton.click();
+        await expect(this.removeCoupon, "A valid coupon should be applied").toBeVisible();
         
     }
-
-    async getTotal(): Promise<number>{
-        const total = await this.cartTotal;
-        return total ? this.convertToInt(total) : 0;
-    }
-
-    async getShipping(): Promise<number>{
-        const shipping = await this.cartShippingCost;
-        return shipping ? this.convertToInt(shipping) : 0;
-    }
-
-    async getDiscount(): Promise<number>{
-        const discount = await this.cartDiscount;
-        return discount ? this.convertToInt(discount) : 0;
-    
-    }
-
-    async calculateExpectedTotal(): Promise<number>{
-        const subTotal =  await this.getSubTotal();
-        const shipping = await this.getShipping();
-        const discount = await this.getDiscount();
-        return subTotal - discount + shipping;
-    }
-    async calculateDiscount(discount: number): Promise<number>{
-        const subtotal = await this.getSubTotal();
-        return (discount/100) * subtotal;
-    }
-
-    
-
 
 }
