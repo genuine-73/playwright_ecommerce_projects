@@ -11,7 +11,7 @@ teardown('Teardown', async ({page}) => {
 
     //Logout from Account
     const account = new AccountPOM(page);
-    await account.clickLogoutButton();
+    await account.logout();
 
     //close down the website
     await page.close();

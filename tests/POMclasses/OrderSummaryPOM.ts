@@ -6,14 +6,13 @@ export default class OrderSummaryPOM {
 
     //Instantiation
     constructor(page: Page){
-        this.page = page;
 
+        this.page = page;
     }
 
     //Locators
     get Ordernumber() {
+
         return this.page.locator('#post-6 > div > div > div > ul > li.woocommerce-order-overview__order.order > strong').innerText();
     }
-
-
 }

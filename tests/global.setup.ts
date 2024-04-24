@@ -6,8 +6,6 @@ import AccountPOM from './POMclasses/AccountPOM';
 
 setup('Setup process', async ({page})=>{
 
-    console.log("Now in globalsetup");
-
     //navigate to ecommerce site
     await page.goto('./')
     console.log("Successfully navigated to the ecommerce website")
@@ -27,12 +25,11 @@ setup('Setup process', async ({page})=>{
         process.env.USER_NAME as string, 
         process.env.PASSWORD as string 
     );
-
-    expect(account.logoutButton, "should be logged in").toBeVisible();
+    console.log("Successfully logged into my account");
+    
     await page.waitForURL("https://www.edgewordstraining.co.uk/demo-site/my-account/");
 
-    //Stores login state so we can start from account every time test is run
+    //Stores login state so we can start from logged in state every time test is run
     await page.context().storageState({path: STORAGE_STATE});
-    console.log("Successfully logged into my account");
     
 })

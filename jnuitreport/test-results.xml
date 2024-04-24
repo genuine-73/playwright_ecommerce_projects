@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="16.075226999999998">
-<testsuite name="global.teardown.ts" timestamp="2024-04-24T12:45:58.742Z" hostname="teardown" tests="1" failures="0" skipped="0" time="1.98" errors="0">
-<testcase name="Teardown" classname="global.teardown.ts" time="1.98">
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="15.765822">
+<testsuite name="global.teardown.ts" timestamp="2024-04-24T12:48:26.336Z" hostname="teardown" tests="1" failures="0" skipped="0" time="2.679" errors="0">
+<testcase name="Teardown" classname="global.teardown.ts" time="2.679">
 <system-out>
 <![CDATA[Now in global teardown
 Successfully closed the website
@@ -8,8 +8,8 @@ Successfully closed the website
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="global.setup.ts" timestamp="2024-04-24T12:45:58.742Z" hostname="setup" tests="1" failures="0" skipped="0" time="3.054" errors="0">
-<testcase name="Setup process" classname="global.setup.ts" time="3.054">
+<testsuite name="global.setup.ts" timestamp="2024-04-24T12:48:26.336Z" hostname="setup" tests="1" failures="0" skipped="0" time="3.002" errors="0">
+<testcase name="Setup process" classname="global.setup.ts" time="3.002">
 <system-out>
 <![CDATA[Now in globalsetup
 Successfully navigated to the ecommerce website
@@ -20,12 +20,15 @@ Successfully logged into my account
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="ecommerce-playwright-project.spec.ts" timestamp="2024-04-24T12:45:58.742Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.864" errors="0">
-<testcase name="Test Case One: Applying Coupon" classname="ecommerce-playwright-project.spec.ts" time="8.864">
+<testsuite name="ecommerce-playwright-project.spec.ts" timestamp="2024-04-24T12:48:26.336Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.912" errors="0">
+<testcase name="Test Case Two: Placing Order" classname="ecommerce-playwright-project.spec.ts" time="7.912">
 <system-out>
 <![CDATA[Successfully logged into my account
 Successfully added an item to cart
-Successfully applied coupon edgewordsto cart
+Successfully placed an order
+Successfully assigned order number from order summary page to variable: 13221
+Successfully navigated to Account
+Successfully assigned order number from Account->Orders to variable: #13221
 ]]>
 </system-out>
 </testcase>

@@ -6,7 +6,7 @@ import CartPOM from '../POMclasses/CartPOM';
 import CheckoutPOM from '../POMclasses/CheckoutPOM';
 import PopUpsPOM from '../POMclasses/PopUpsPOM';
 import OrderSummaryPOM from '../POMclasses/OrderSummaryPOM';
-import OrderAccount from '../POMclasses/OrderAccount';
+import OrderAccount from '../POMclasses/OrderAccountPOM';
 import AccountPOM from '../POMclasses/AccountPOM';
 import test_data from '../test-data/item.json';
 
@@ -24,22 +24,28 @@ export const test = base.extend<MyFixtures & ProductOptions>({
     item: [test_data.item, {option: true}],
 
     homePage: async({page,}, use) => {
+
+        //Navigates to ecommerce site
         await page.goto('https://www.edgewordstraining.co.uk/demo-site/my-account/')
-        console.log("Successfully logged into my account")
         const navbar = new NavBarPOM(page);
         await use(navbar);
+
     },
     
     cart: async({item, homePage}, use) => {
+
+        //Navigates to Shop page
         const shop = await homePage.goToShopSuccess(item);
         const cart = await shop.addItemToCart();
         console.log("Successfully added an item to cart")
     
         //Checks to see if an item has been added to cart
-        await expect(cart.productName.filter({hasText: item}),"Needed to check if the item added from the shop page is in cart").toHaveText(item);
+        await expect(cart.productName.filter({hasText: item}),"Needed to check if the item added from the shop page is in cart")
+        .toHaveText(item);
         
         await use(cart);
 
+        //Removes coupon and delete items from the cart
         await homePage.goToCartSuccess();
         await cart.cartCleanUpProcess(homePage);
     

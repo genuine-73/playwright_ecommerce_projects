@@ -3,7 +3,7 @@ import {expect} from '@playwright/test';
 import { HelperMethods as helper} from './HelperMethods/HelperMethods';
 import test_case_two from './test-data/test_case_two.json';
 import test_case_one from './test-data/test_case_one.json';
-import OrderAccount from './POMclasses/OrderAccount';
+import OrderAccountPOM from './POMclasses/OrderAccountPOM';
 
 
 
@@ -11,26 +11,32 @@ test("Test Case One: Applying Coupon", async function({page, cart}){
 
     //Passing coupon code
     await cart.enterCouponCode(test_case_one.coupon);
-    await cart.clickApplyCoupon();
+    await cart.applyCoupon();
     await expect(cart.removeCoupon, "A valid coupon should be applied").toBeVisible();
     console.log("Successfully applied coupon " + test_case_one.coupon + "to cart");
 
-    //Grab the string value
+    //Calculates total and discount for testing
     const expectedTotal = await helper.calculateExpectedTotal(page);
     const actualTotal = await helper.getTotal(page);
     const expectedDiscount = await helper.calculateDiscount(test_case_one.discount, page);
     const actualDiscount = await helper.getDiscount(page);
 
-    //Assert statement checks
-    expect.soft(actualDiscount, "Test failed: Discount from the website: £" + actualDiscount/100 + " Discount calculated: £" + expectedDiscount/100).toEqual(expectedDiscount);
-    expect.soft(actualTotal, "Test failed: Total from the website: £" + actualTotal/100 + " Total from calculating subtotal, discount and shipping: £" + expectedTotal/100).toEqual(expectedTotal);
+    //Checks if discount has been applied correctly
+    expect.soft(actualDiscount, "Test failed: Discount from the website: £" 
+    + actualDiscount/100 + " Discount calculated: £" 
+    + expectedDiscount/100).toEqual(expectedDiscount);
+    
+    //Checks if total has been applied correctly
+    expect.soft(actualTotal, "Test failed: Total from the website: £" 
+    + actualTotal/100 + " Total from calculating subtotal, discount and shipping: £" 
+    + expectedTotal/100).toEqual(expectedTotal);
 
 });
 
 test("Test Case Two: Placing Order", async function({homePage, cart, page}){
     
     //Navigates to the product page 
-    const checkout = await cart.clickProceedToCheckout();
+    const checkout = await cart.goToCheckout();
 
     //Setup variables for filling out billing details
     const setFirstName = test_case_two.firstname;
@@ -54,7 +60,7 @@ test("Test Case Two: Placing Order", async function({homePage, cart, page}){
     await expect(checkout.emailAddress, "The email address field should be: " + setEmail).toHaveValue(setEmail);
     
     //Get order number from Order Summary page
-    const orderSummary = await checkout.clickPlaceOrder();
+    const orderSummary = await checkout.placeOrder();
     console.log("Successfully placed an order")
     const orderNo = await orderSummary.Ordernumber;
     console.log('Successfully assigned order number from order summary page to variable: ' + orderNo);
@@ -64,12 +70,13 @@ test("Test Case Two: Placing Order", async function({homePage, cart, page}){
     console.log("Successfully navigated to Account")
 
     //Get order number from My account -> order page
-    await account.clickOrderTabButton();
-    const orderTab = new OrderAccount(page);
+    await account.goToOrders();
+    const orderTab = new OrderAccountPOM(page);
     const latestOrderNo = await orderTab.latestOrderNumber;
     console.log("Successfully assigned order number from Account->Orders to variable: " + latestOrderNo)
 
-    //check if the number match
-    expect(orderNo, `Order number from summary page: ${orderNo} | Order number from Orders Page ${latestOrderNo}`).toContain(latestOrderNo.substring(1));
+    //Check if the order numbers match
+    expect(orderNo, `Order number from summary page: ${orderNo} | Order number from Orders Page ${latestOrderNo}`)
+    .toContain(latestOrderNo.substring(1));
 
 });

@@ -132,7 +132,7 @@
                 {
                   "workerIndex": 2,
                   "status": "passed",
-                  "duration": 1980,
+                  "duration": 2679,
                   "errors": [],
                   "stdout": [
                     {
@@ -144,7 +144,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-24T12:46:12.741Z",
+                  "startTime": "2024-04-24T12:48:39.279Z",
                   "attachments": []
                 }
               ],
@@ -179,7 +179,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 3054,
+                  "duration": 3002,
                   "errors": [],
                   "stdout": [
                     {
@@ -200,7 +200,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-24T12:45:59.308Z",
+                  "startTime": "2024-04-24T12:48:26.862Z",
                   "attachments": []
                 }
               ],
@@ -221,7 +221,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Test Case One: Applying Coupon",
+          "title": "Test Case Two: Placing Order",
           "ok": true,
           "tags": [],
           "tests": [
@@ -235,7 +235,7 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 8864,
+                  "duration": 7912,
                   "errors": [],
                   "stdout": [
                     {
@@ -245,21 +245,30 @@
                       "text": "Successfully added an item to cart\n"
                     },
                     {
-                      "text": "Successfully applied coupon edgewordsto cart\n"
+                      "text": "Successfully placed an order\n"
+                    },
+                    {
+                      "text": "Successfully assigned order number from order summary page to variable: 13221\n"
+                    },
+                    {
+                      "text": "Successfully navigated to Account\n"
+                    },
+                    {
+                      "text": "Successfully assigned order number from Account->Orders to variable: #13221\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-24T12:46:03.268Z",
+                  "startTime": "2024-04-24T12:48:30.735Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "223d74849d60f98001be-d759795987f5967eddac",
+          "id": "223d74849d60f98001be-2e126ec0867eaea5587e",
           "file": "ecommerce-playwright-project.spec.ts",
-          "line": 10,
+          "line": 30,
           "column": 5
         }
       ]
@@ -267,8 +276,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-24T12:45:58.698Z",
-    "duration": 16091.396,
+    "startTime": "2024-04-24T12:48:26.297Z",
+    "duration": 15743.466,
     "expected": 3,
     "skipped": 0,
     "unexpected": 0,

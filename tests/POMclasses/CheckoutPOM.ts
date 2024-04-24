@@ -7,48 +7,58 @@ export default class CheckoutPOM {
 
     //Instantiation
     constructor(page: Page){
+        
         this.page = page;
-        //expect(page).toHaveURL("https://www.edgewordstraining.co.uk/demo-site/checkout/");
     }
 
     //locator
     get firstName() {
+
         return this.page.locator('#billing_first_name')
     }
 
     get lastName() {
+
         return this.page.locator('#billing_last_name')
     }
 
     get country(){
+
         return this.page.locator('#select2-billing_country-container')
     }
 
     get streetAddress() {
+
         return this.page.locator('#billing_address_1')
     }
 
     get city() {
+
         return this.page.locator('#billing_city')
     }
 
     get postCode() {
+
         return this.page.locator('#billing_postcode')
     }
 
     get phoneNo() {
+
         return this.page.locator('#billing_phone');
     }
 
     get emailAddress() {
+
         return this.page.locator('#billing_email')
     }
 
     get checkPaymentRadioButton() {
+
         return this.page.getByLabel('Check payments')
     }
 
     get placeOrderButton() {
+
         return this.page.getByRole('button', { name: 'Place order' });
     }
     
@@ -65,9 +75,13 @@ export default class CheckoutPOM {
         
     }
 
-    async clickPlaceOrder(): Promise<OrderSummaryPOM> {
+    async placeOrder(): Promise<OrderSummaryPOM> {
+
+        //Checks payment method
         await this.checkPaymentRadioButton.check();
         await expect(this.checkPaymentRadioButton).toBeChecked();
+
+        //places order
         await this.placeOrderButton.click();
         return new OrderSummaryPOM(this.page);
     }

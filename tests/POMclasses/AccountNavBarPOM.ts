@@ -1,12 +1,10 @@
 import {Page, Locator} from '@playwright/test'
-import OrderAccount from './OrderAccount';
 
 export default class AccountNavBarPOM {
     
     //variable declaration
-    private readonly page: Page;
+    page: Page;
 
-    //Instantiation
     constructor(page: Page) {
         this.page = page;
     }
@@ -21,11 +19,11 @@ export default class AccountNavBarPOM {
     }
 
     //service methods
-    async clickOrderTabButton() {
+    async goToOrders() {
         await this.orderTabButton.click();
     }
 
-    async clickLogoutButton() {
+    async logout() {
         await this.logoutButton.click();
     }
 
