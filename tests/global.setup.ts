@@ -19,11 +19,10 @@ setup('Setup process', async ({page})=>{
 
     //Navigates to account
     const navbar = new NavBarPOM(page);
-    await navbar.goToAccount();
+    const account = await navbar.goToAccountSuccess();
     console.log("Successfully navigated to my account");
 
     //logging in to account
-    const account = new AccountPOM(page);
     await account.login('hellogen@edgewords.co.uk', 'HelloEdgewords!23');
     expect(account.logoutButton, "should be logged in").toBeVisible();
     await page.waitForURL("https://www.edgewordstraining.co.uk/demo-site/my-account/");

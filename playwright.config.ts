@@ -43,25 +43,25 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
 
-    {
-      name: 'setup',
-      testMatch: /global\.setup\.ts/,
-      teardown: 'teardown',
-      use: {
-        viewport: null,
-        launchOptions:{args:['--start-maximized']},
-      }
-    },
+    // {
+    //   name: 'setup',
+    //   testMatch: /global\.setup\.ts/,
+    //   teardown: 'teardown',
+    //   use: {
+    //     viewport: null,
+    //     launchOptions:{args:['--start-maximized']},
+    //   }
+    // },
 
-    {
-      name: 'teardown',
-      testMatch: /global\.teardown\.ts/,
-      use: {
-        storageState: STORAGE_STATE,
-        viewport: null,
-        launchOptions:{args:['--start-maximized']},
-      }
-    },
+    // {
+    //   name: 'teardown',
+    //   testMatch: /global\.teardown\.ts/,
+    //   use: {
+    //     storageState: STORAGE_STATE,
+    //     viewport: null,
+    //     launchOptions:{args:['--start-maximized']},
+    //   }
+    // },
 
     {
       name: 'chromium',
@@ -70,10 +70,10 @@ export default defineConfig({
         deviceScaleFactor: undefined,
         viewport: null,
         launchOptions:{args:['--start-maximized']},
-        storageState: STORAGE_STATE,
+        //storageState: STORAGE_STATE,
 
        },
-       dependencies: ['setup'],
+       //dependencies: ['setup'],
     },
 
     {
@@ -83,10 +83,10 @@ export default defineConfig({
         deviceScaleFactor: undefined,
         viewport: null,
         launchOptions:{args:['--start-maximized']},
-        storageState: STORAGE_STATE,
+        //storageState: STORAGE_STATE,
 
       },
-      dependencies: ['setup'],
+      //dependencies: ['setup'],
     },
 
     {
@@ -96,9 +96,9 @@ export default defineConfig({
         deviceScaleFactor: undefined,
         viewport: null,
         launchOptions:{args:['--start-maximized']},
-        storageState: STORAGE_STATE, 
+        //storageState: STORAGE_STATE, 
       },
-      dependencies: ['setup'],
+      //dependencies: ['setup'],
     },
 
     /* Test against mobile viewports. */

@@ -62,15 +62,6 @@ export default class CheckoutPOM {
         await this.postCode.fill(postCode);
         await this.phoneNo.fill(phoneNo);
         await this.emailAddress.fill(email);
-
-        //Assert Statements to check text fields have been filled;
-        await expect(this.firstName, "The first name field should be: " + firstName).toHaveValue(firstName);
-        await expect(this.lastName, "The last name field should be: " + lastName).toHaveValue(lastName);
-        await expect(this.streetAddress, "The street address field should be: " + streetAddress).toHaveValue(streetAddress);
-        await expect(this.city, "The city field should be: " + city).toHaveValue(city);
-        await expect(this.postCode, "The postcode field should be: " + postCode).toHaveValue(postCode);
-        await expect(this.phoneNo, "The phoneNo field should be: " + phoneNo).toHaveValue(phoneNo);
-        await expect(this.emailAddress, "The email address field should be: " + email).toHaveValue(email);
         
     }
 

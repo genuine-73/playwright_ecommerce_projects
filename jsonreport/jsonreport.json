@@ -42,32 +42,6 @@
         "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "id": "setup",
-        "name": "setup",
-        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "/global\\.setup\\.ts/"
-        ],
-        "timeout": 60000
-      },
-      {
-        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "id": "teardown",
-        "name": "teardown",
-        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "/global\\.teardown\\.ts/"
-        ],
-        "timeout": 60000
-      },
-      {
-        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
-        "repeatEach": 1,
-        "retries": 0,
         "id": "chromium",
         "name": "chromium",
         "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
@@ -112,116 +86,13 @@
   },
   "suites": [
     {
-      "title": "global.teardown.ts",
-      "file": "global.teardown.ts",
+      "title": "example-test-project.spec.ts",
+      "file": "example-test-project.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Teardown",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "teardown",
-              "projectName": "teardown",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "passed",
-                  "duration": 3298,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Now in global teardown\n"
-                    },
-                    {
-                      "text": "Successfully closed the website\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-04-23T10:26:08.052Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "05ed36a5ffdcbe241e99-6a59947d0855f7e68747",
-          "file": "global.teardown.ts",
-          "line": 5,
-          "column": 9
-        }
-      ]
-    },
-    {
-      "title": "global.setup.ts",
-      "file": "global.setup.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "Setup process",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "setup",
-              "projectName": "setup",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 4229,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Now in globalsetup\n"
-                    },
-                    {
-                      "text": "Successfully navigated to the ecommerce website\n"
-                    },
-                    {
-                      "text": "Successfully dismissed a banner below\n"
-                    },
-                    {
-                      "text": "Successfully navigated to my account\n"
-                    },
-                    {
-                      "text": "Successfully logged into my account\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-04-23T10:25:50.582Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "e4eb4d1272d956fb120f-3dda91cbd9f804cef367",
-          "file": "global.setup.ts",
-          "line": 7,
-          "column": 6
-        }
-      ]
-    },
-    {
-      "title": "ecommerce-project.spec.ts",
-      "file": "ecommerce-project.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "Test Case One: Applying Coupon",
+          "title": "Test Case Two: Placing Order",
           "ok": true,
           "tags": [],
           "tests": [
@@ -233,36 +104,54 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 1,
+                  "workerIndex": 0,
                   "status": "passed",
-                  "duration": 11094,
+                  "duration": 10341,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Successfully logged into my account\n"
+                      "text": "Successfully navigated to my account\n"
                     },
                     {
-                      "text": "Successfully navigated to the shop page\n"
+                      "text": "Successfully dismissed a banner below\n"
+                    },
+                    {
+                      "text": "Successfully navigated to my account\n"
+                    },
+                    {
+                      "text": "Successfully logged into my account\n"
                     },
                     {
                       "text": "Successfully added an item to cart\n"
                     },
                     {
-                      "text": "Successfully applied coupon edgewordsto cart\n"
+                      "text": "Successfully placed an order\n"
+                    },
+                    {
+                      "text": "Successfully assigned order number from order summary page to variable: 13173\n"
+                    },
+                    {
+                      "text": "Successfully navigated to Account\n"
+                    },
+                    {
+                      "text": "Successfully assigned order number from Account->Orders to variable: #13173\n"
+                    },
+                    {
+                      "text": "Successfully closed the website\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-23T10:25:55.928Z",
+                  "startTime": "2024-04-23T15:47:27.998Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "6ac070fa5b0b1d4593b1-0d4fb08f286e43bf58ac",
-          "file": "ecommerce-project.spec.ts",
-          "line": 10,
+          "id": "02c8a56adac144f5fe83-c75e2753b9617db40106",
+          "file": "example-test-project.spec.ts",
+          "line": 39,
           "column": 5
         }
       ]
@@ -270,9 +159,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-23T10:25:49.810Z",
-    "duration": 21679.712000000003,
-    "expected": 3,
+    "startTime": "2024-04-23T15:47:27.400Z",
+    "duration": 11318.71,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

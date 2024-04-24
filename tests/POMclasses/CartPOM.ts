@@ -8,8 +8,10 @@ export default class CartPOM {
 
     //Instantiation
     constructor(page: Page){
+
         this.page = page;
         //expect(page).toHaveURL("https://www.edgewordstraining.co.uk/demo-site/cart/");
+
     }
 
     //locators
@@ -66,6 +68,7 @@ export default class CartPOM {
 
     async enterCouponCode(coupon: string) {
         await this.couponCodeField.fill(coupon);
+        await expect(this.couponCodeField, "coupon code field should not be empty").not.toBeEmpty();
     }
 
     async clickApplyCoupon(){
@@ -77,30 +80,15 @@ export default class CartPOM {
         return new CheckoutPOM(this.page);
     }
 
-    async cartCleanUpProcess() {
-        try
-        {
-            await this.removeCoupon.click();
-        }
-
-        catch
-        {
-            console.error("There is no coupon applued")
-        }
-
-        finally
-        {
-            for (const row of await this.removeItem.all()){
-                row.click();
-            }
-            await this.returnToShopButton.click();
-        }
-    }
 
     //TODO Complete this method 
-    async cartCleanUpSuccess() {
+    async cartCleanUpProcess() {
 
-        await this.removeCoupon.click();
+        if(await this.removeCoupon.isVisible()){
+
+            await this.removeCoupon.click();
+
+        }
 
         let total = await this.removeItem.count();
 
@@ -112,19 +100,9 @@ export default class CartPOM {
             await expect(this.removeItem).toHaveCount(--total);
 
         }
-        await this.returnToShopButton.click();
 
+        await expect(this.cartIsEmptyBanner).toBeVisible();
 
     } 
-
-    //TODO Complete this method
-    async enterAndApplyCoupon(coupon: string, item: string){
-        await expect(this.productName.filter({hasText: item}),"Needed to check if the item added from the shop page is in cart").toContainText(item);
-        await this.couponCodeField.fill(coupon);
-        await expect(this.couponCodeField, "coupon code field should not be empty").not.toBeEmpty();
-        await this.applyCouponButton.click();
-        await expect(this.removeCoupon, "A valid coupon should be applied").toBeVisible();
-        
-    }
 
 }

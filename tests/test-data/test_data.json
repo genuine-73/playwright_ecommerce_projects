@@ -1,0 +1,14 @@
+{
+    "username": "hellogen@edgewords.co.uk",
+    "item": "Belt",
+    "firstname": "John",
+    "lastname": "Doe",
+    "city": "London",
+    "streetAddress": "10 Downing Street",
+    "postcode": "SW1 2AA",
+    "phoneNo": "096745746",
+    "email": "hellogen@edgewords.co.uk",
+    "password": "HelloEdgewords!23",
+    "coupon": "edgewords",
+    "discount": 15
+}

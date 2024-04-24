@@ -1,32 +1,17 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="21.703734999999998">
-<testsuite name="global.teardown.ts" timestamp="2024-04-23T10:25:49.868Z" hostname="teardown" tests="1" failures="0" skipped="0" time="3.298" errors="0">
-<testcase name="Teardown" classname="global.teardown.ts" time="3.298">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.345482">
+<testsuite name="example-test-project.spec.ts" timestamp="2024-04-23T15:47:27.435Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.341" errors="0">
+<testcase name="Test Case Two: Placing Order" classname="example-test-project.spec.ts" time="10.341">
 <system-out>
-<![CDATA[Now in global teardown
-Successfully closed the website
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="global.setup.ts" timestamp="2024-04-23T10:25:49.868Z" hostname="setup" tests="1" failures="0" skipped="0" time="4.229" errors="0">
-<testcase name="Setup process" classname="global.setup.ts" time="4.229">
-<system-out>
-<![CDATA[Now in globalsetup
-Successfully navigated to the ecommerce website
+<![CDATA[Successfully navigated to my account
 Successfully dismissed a banner below
 Successfully navigated to my account
 Successfully logged into my account
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="ecommerce-project.spec.ts" timestamp="2024-04-23T10:25:49.868Z" hostname="chromium" tests="1" failures="0" skipped="0" time="11.094" errors="0">
-<testcase name="Test Case One: Applying Coupon" classname="ecommerce-project.spec.ts" time="11.094">
-<system-out>
-<![CDATA[Successfully logged into my account
-Successfully navigated to the shop page
 Successfully added an item to cart
-Successfully applied coupon edgewordsto cart
+Successfully placed an order
+Successfully assigned order number from order summary page to variable: 13173
+Successfully navigated to Account
+Successfully assigned order number from Account->Orders to variable: #13173
+Successfully closed the website
 ]]>
 </system-out>
 </testcase>

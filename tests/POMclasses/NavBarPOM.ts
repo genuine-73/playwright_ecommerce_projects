@@ -37,5 +37,10 @@ export default class NavBarPOM {
         return new AccountPOM(this.page);
     }
 
+    async goToShopSuccess(item: string): Promise<ShopPOM>{
+        await this.shop.click();
+        return new ShopPOM(this.page, item);
+    }
+
 
 }

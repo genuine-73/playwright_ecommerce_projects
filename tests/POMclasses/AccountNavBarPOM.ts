@@ -1,5 +1,6 @@
 import {Page, Locator} from '@playwright/test'
 import OrderAccount from './OrderAccount';
+import OrderSummaryPOM from './OrderSummaryPOM';
 
 export default class AccountNavBarPOM {
     
@@ -28,4 +29,5 @@ export default class AccountNavBarPOM {
     async clickLogoutButton() {
         await this.logoutButton.click();
     }
+
 }

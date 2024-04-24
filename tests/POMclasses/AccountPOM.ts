@@ -1,5 +1,6 @@
 import {Page, expect, Locator} from '@playwright/test'
 import AccountNavBarPOM from './AccountNavBarPOM';
+import OrderAccount from './OrderAccount';
 
 //inherits nav links (logout and orders) from account nav bar
 export default class AccountPOM extends AccountNavBarPOM {
@@ -38,7 +39,6 @@ export default class AccountPOM extends AccountNavBarPOM {
         await this.passwordField.fill(password);
     }
 
-    //TODO: Change methods from simple login to login expect success
     async loginExpectSuccess(username: string, password: string){
         if(username && password){
             await this.enterUsername(username);
