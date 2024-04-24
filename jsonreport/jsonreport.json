@@ -42,6 +42,32 @@
         "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
         "repeatEach": 1,
         "retries": 0,
+        "id": "setup",
+        "name": "setup",
+        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/global\\.setup\\.ts/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "teardown",
+        "name": "teardown",
+        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/global\\.teardown\\.ts/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
         "id": "chromium",
         "name": "chromium",
         "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
@@ -86,13 +112,116 @@
   },
   "suites": [
     {
-      "title": "example-test-project.spec.ts",
-      "file": "example-test-project.spec.ts",
+      "title": "global.teardown.ts",
+      "file": "global.teardown.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Test Case Two: Placing Order",
+          "title": "Teardown",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "teardown",
+              "projectName": "teardown",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 1980,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Now in global teardown\n"
+                    },
+                    {
+                      "text": "Successfully closed the website\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-24T12:46:12.741Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05ed36a5ffdcbe241e99-6a59947d0855f7e68747",
+          "file": "global.teardown.ts",
+          "line": 5,
+          "column": 9
+        }
+      ]
+    },
+    {
+      "title": "global.setup.ts",
+      "file": "global.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Setup process",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 3054,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Now in globalsetup\n"
+                    },
+                    {
+                      "text": "Successfully navigated to the ecommerce website\n"
+                    },
+                    {
+                      "text": "Successfully dismissed a banner below\n"
+                    },
+                    {
+                      "text": "Successfully navigated to my account\n"
+                    },
+                    {
+                      "text": "Successfully logged into my account\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-24T12:45:59.308Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eb4d1272d956fb120f-3dda91cbd9f804cef367",
+          "file": "global.setup.ts",
+          "line": 7,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "ecommerce-playwright-project.spec.ts",
+      "file": "ecommerce-playwright-project.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Test Case One: Applying Coupon",
           "ok": true,
           "tags": [],
           "tests": [
@@ -104,20 +233,11 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 1,
                   "status": "passed",
-                  "duration": 10341,
+                  "duration": 8864,
                   "errors": [],
                   "stdout": [
-                    {
-                      "text": "Successfully navigated to my account\n"
-                    },
-                    {
-                      "text": "Successfully dismissed a banner below\n"
-                    },
-                    {
-                      "text": "Successfully navigated to my account\n"
-                    },
                     {
                       "text": "Successfully logged into my account\n"
                     },
@@ -125,33 +245,21 @@
                       "text": "Successfully added an item to cart\n"
                     },
                     {
-                      "text": "Successfully placed an order\n"
-                    },
-                    {
-                      "text": "Successfully assigned order number from order summary page to variable: 13173\n"
-                    },
-                    {
-                      "text": "Successfully navigated to Account\n"
-                    },
-                    {
-                      "text": "Successfully assigned order number from Account->Orders to variable: #13173\n"
-                    },
-                    {
-                      "text": "Successfully closed the website\n"
+                      "text": "Successfully applied coupon edgewordsto cart\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-23T15:47:27.998Z",
+                  "startTime": "2024-04-24T12:46:03.268Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "02c8a56adac144f5fe83-c75e2753b9617db40106",
-          "file": "example-test-project.spec.ts",
-          "line": 39,
+          "id": "223d74849d60f98001be-d759795987f5967eddac",
+          "file": "ecommerce-playwright-project.spec.ts",
+          "line": 10,
           "column": 5
         }
       ]
@@ -159,9 +267,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-23T15:47:27.400Z",
-    "duration": 11318.71,
-    "expected": 1,
+    "startTime": "2024-04-24T12:45:58.698Z",
+    "duration": 16091.396,
+    "expected": 3,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

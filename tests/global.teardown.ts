@@ -8,10 +8,6 @@ teardown('Teardown', async ({page}) => {
 
     //Navigating to the my account webpage
     await page.goto('https://www.edgewordstraining.co.uk/demo-site/my-account/');
-    
-    //Navigate to page
-    const navbar = new NavBarPOM(page);
-    await navbar.goToAccount();
 
     //Logout from Account
     const account = new AccountPOM(page);

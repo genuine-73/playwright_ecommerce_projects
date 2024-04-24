@@ -16,21 +16,18 @@ export default class NavBarPOM {
 
     //Locators
     get shop() {
-        return this.page.locator('#menu-item-43').getByRole('link', { name: 'Shop' });  
+        return this.page.locator('#menu-main').getByRole('link', { name: 'Shop' });  
     }
 
     get account() {
-        return this.page.locator('#menu-item-46').getByRole('link', { name: 'My account' });   
+        return this.page.locator('#menu-main').getByRole('link', { name: 'My account' });   
+    }
+
+    get cart(){
+        return this.page.locator('#menu-main').getByRole('link', {name: 'Cart'});
     }
 
     //Service methods
-    async goToShop(){
-        await this.shop.click();
-    }
-
-    async goToAccount(){
-        await this.account.click()
-    }
 
     async goToAccountSuccess(): Promise<AccountPOM>{
         await this.account.click();
@@ -42,5 +39,9 @@ export default class NavBarPOM {
         return new ShopPOM(this.page, item);
     }
 
+    async goToCartSuccess(): Promise<CartPOM>{
+        await this.cart.click();
+        return new CartPOM(this.page);
+    }
 
 }

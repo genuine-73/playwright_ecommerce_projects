@@ -1,5 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
 export const STORAGE_STATE = 'setup.json'
+import dotenv from 'dotenv';
+import path from 'path';
+
+
+// Read from default ".env" file.
+dotenv.config();
+
+require('dotenv').config();
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -35,7 +44,7 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     // Record video only when retrying a test for the first time.
-    video: 'on',
+    video: 'retain-on-failure',
 
     launchOptions: {slowMo: 1000},
   },
@@ -43,25 +52,25 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
 
-    // {
-    //   name: 'setup',
-    //   testMatch: /global\.setup\.ts/,
-    //   teardown: 'teardown',
-    //   use: {
-    //     viewport: null,
-    //     launchOptions:{args:['--start-maximized']},
-    //   }
-    // },
+    {
+      name: 'setup',
+      testMatch: /global\.setup\.ts/,
+      teardown: 'teardown',
+      use: {
+        viewport: null,
+        launchOptions:{args:['--start-maximized']},
+      }
+    },
 
-    // {
-    //   name: 'teardown',
-    //   testMatch: /global\.teardown\.ts/,
-    //   use: {
-    //     storageState: STORAGE_STATE,
-    //     viewport: null,
-    //     launchOptions:{args:['--start-maximized']},
-    //   }
-    // },
+    {
+      name: 'teardown',
+      testMatch: /global\.teardown\.ts/,
+      use: {
+        storageState: STORAGE_STATE,
+        viewport: null,
+        launchOptions:{args:['--start-maximized']},
+      }
+    },
 
     {
       name: 'chromium',
@@ -70,10 +79,10 @@ export default defineConfig({
         deviceScaleFactor: undefined,
         viewport: null,
         launchOptions:{args:['--start-maximized']},
-        //storageState: STORAGE_STATE,
+        storageState: STORAGE_STATE,
 
        },
-       //dependencies: ['setup'],
+       dependencies: ['setup'],
     },
 
     {
@@ -83,10 +92,10 @@ export default defineConfig({
         deviceScaleFactor: undefined,
         viewport: null,
         launchOptions:{args:['--start-maximized']},
-        //storageState: STORAGE_STATE,
+        storageState: STORAGE_STATE,
 
       },
-      //dependencies: ['setup'],
+      dependencies: ['setup'],
     },
 
     {
@@ -96,9 +105,9 @@ export default defineConfig({
         deviceScaleFactor: undefined,
         viewport: null,
         launchOptions:{args:['--start-maximized']},
-        //storageState: STORAGE_STATE, 
+        storageState: STORAGE_STATE, 
       },
-      //dependencies: ['setup'],
+      dependencies: ['setup'],
     },
 
     /* Test against mobile viewports. */

@@ -18,11 +18,10 @@ export default class ShopPOM {
     }
 
     //service methods
-    async clickAddCartButton(): Promise<CartPOM> {
+    async addItemToCart(): Promise<CartPOM> {
         await this.addToCartButton.click();
         await this.viewCartButton.click();
         return new CartPOM(this.page);
     }
-    
 
 }

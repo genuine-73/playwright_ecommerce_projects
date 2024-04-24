@@ -1,19 +1,13 @@
-import { test} from './fixtures/my-base-test-2';
+import { test} from './fixtures/my-base-test';
 import {expect} from '@playwright/test';
 import { HelperMethods as helper} from './HelperMethods/HelperMethods';
 import test_case_two from './test-data/test_case_two.json';
 import test_case_one from './test-data/test_case_one.json';
+import OrderAccount from './POMclasses/OrderAccount';
 
 
 
-test("Test Case One: Applying Coupon", async function({page, loginToAccount, cart}){
-
-    // //navigates to shop page
-    // const cart = await loginToAccount.clickAddCartButton();
-    // console.log("Successfully added an item to cart")
-
-    // //Checks to see if an item has been added to cart
-    // await expect(cart.productName.filter({hasText: test_case_two.item}),"Needed to check if the item added from the shop page is in cart").toHaveText(test_case_two.item);
+test("Test Case One: Applying Coupon", async function({page, cart}){
 
     //Passing coupon code
     await cart.enterCouponCode(test_case_one.coupon);
@@ -31,23 +25,9 @@ test("Test Case One: Applying Coupon", async function({page, loginToAccount, car
     expect.soft(actualDiscount, "Test failed: Discount from the website: £" + actualDiscount/100 + " Discount calculated: £" + expectedDiscount/100).toEqual(expectedDiscount);
     expect.soft(actualTotal, "Test failed: Total from the website: £" + actualTotal/100 + " Total from calculating subtotal, discount and shipping: £" + expectedTotal/100).toEqual(expectedTotal);
 
-    //cart cleanup process
-    // await cart.cartCleanUpProcess();
-
 });
 
-test("Test Case Two: Placing Order", async function({navbar, loginToAccount, orderTab}){
-
-    //navigates to shop page
-    // const shop = await navbar.goToShopSuccess(test_case_one.item);
-    // console.log("Successfully navigated to the shop page");
-
-    // const cart = await shop.clickAddCartButton();
-    const cart = await loginToAccount.clickAddCartButton();
-    console.log("Successfully added an item to cart")
-
-    //Checks to see if an item has been added to cart
-    await expect(cart.productName.filter({hasText: test_case_two.item}),"Needed to check if the item added from the shop page is in cart").toHaveText(test_case_two.item);
+test("Test Case Two: Placing Order", async function({homePage, cart, page}){
     
     //Navigates to the product page 
     const checkout = await cart.clickProceedToCheckout();
@@ -80,11 +60,12 @@ test("Test Case Two: Placing Order", async function({navbar, loginToAccount, ord
     console.log('Successfully assigned order number from order summary page to variable: ' + orderNo);
 
     //Navigate to account
-    const account = await navbar.goToAccountSuccess();
+    const account = await homePage.goToAccountSuccess();
     console.log("Successfully navigated to Account")
 
     //Get order number from My account -> order page
     await account.clickOrderTabButton();
+    const orderTab = new OrderAccount(page);
     const latestOrderNo = await orderTab.latestOrderNumber;
     console.log("Successfully assigned order number from Account->Orders to variable: " + latestOrderNo)
 

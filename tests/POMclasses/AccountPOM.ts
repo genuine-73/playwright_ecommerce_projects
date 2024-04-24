@@ -21,12 +21,6 @@ export default class AccountPOM extends AccountNavBarPOM {
     }
 
     //service methods
-    async login(username: string, password: string){
-        await this.usernameField.fill(username);
-        await this.passwordField.fill(password);
-        await this.loginButton.click();
-    }
-
     async enterUsername(username: string){
         await expect(this.usernameField).toBeEditable();
         await this.usernameField.clear();

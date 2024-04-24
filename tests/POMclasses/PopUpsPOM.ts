@@ -16,7 +16,6 @@ export default class PopUpsPOM {
 
     //service methods
     async clickDismissButton(){
-        await expect(this.dismissButton).toBeVisible();
         await this.dismissButton.click();
     }
 }

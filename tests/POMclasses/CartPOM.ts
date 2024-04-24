@@ -1,5 +1,6 @@
 import {Page, expect, Locator} from '@playwright/test'
 import CheckoutPOM from './CheckoutPOM';
+import NavBarPOM from './NavBarPOM';
 
 export default class CartPOM {
 
@@ -67,42 +68,39 @@ export default class CartPOM {
     // service method
 
     async enterCouponCode(coupon: string) {
+        
         await this.couponCodeField.fill(coupon);
         await expect(this.couponCodeField, "coupon code field should not be empty").not.toBeEmpty();
     }
 
     async clickApplyCoupon(){
+
         await this.applyCouponButton.click();
     }
 
     async clickProceedToCheckout(): Promise<CheckoutPOM> {
+
         await this.proceedToCheckoutButton.click();
         return new CheckoutPOM(this.page);
     }
 
-
     //TODO Complete this method 
-    async cartCleanUpProcess() {
+    async cartCleanUpProcess(navbar: NavBarPOM) {
 
         if(await this.removeCoupon.isVisible()){
 
             await this.removeCoupon.click();
-
         }
 
         let total = await this.removeItem.count();
 
-        while (total) {
+        while (total > 0) {
 
-            console.log("the number of successfully deleted from cart :" + await this.removeItem.count());
             await this.removeItem.first().hover();
             await this.removeItem.first().click();
             await expect(this.removeItem).toHaveCount(--total);
-
         }
 
         await expect(this.cartIsEmptyBanner).toBeVisible();
-
     } 
-
 }

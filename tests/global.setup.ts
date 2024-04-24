@@ -23,7 +23,11 @@ setup('Setup process', async ({page})=>{
     console.log("Successfully navigated to my account");
 
     //logging in to account
-    await account.login('hellogen@edgewords.co.uk', 'HelloEdgewords!23');
+    await account.loginExpectSuccess(
+        process.env.USER_NAME as string, 
+        process.env.PASSWORD as string 
+    );
+
     expect(account.logoutButton, "should be logged in").toBeVisible();
     await page.waitForURL("https://www.edgewordstraining.co.uk/demo-site/my-account/");
 

@@ -1,11 +1,10 @@
 import {Page, Locator} from '@playwright/test'
 import OrderAccount from './OrderAccount';
-import OrderSummaryPOM from './OrderSummaryPOM';
 
 export default class AccountNavBarPOM {
     
     //variable declaration
-    page: Page;
+    private readonly page: Page;
 
     //Instantiation
     constructor(page: Page) {
