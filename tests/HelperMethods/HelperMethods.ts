@@ -38,12 +38,12 @@ export class HelperMethods {
     }
 
     //Calculates the total
-    static async calculateExpectedTotal(page: Page): Promise<number> {
+    static async calculateExpectedTotal(discount: number, page: Page): Promise<number> {
 
         const subTotal = await this.getSubTotal(page);
         const shipping = await this.getShipping(page);
-        const discount = await this.getDiscount(page);
-        return subTotal - discount + shipping;
+        const expectedDiscount = await this.calculateDiscount(discount, page);
+        return subTotal - expectedDiscount + shipping;
     }
 
     //Calculates the discount

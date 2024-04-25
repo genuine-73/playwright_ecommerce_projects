@@ -16,9 +16,10 @@ test("Test Case One: Applying Coupon", async function({page, cart}){
     console.log("Successfully applied coupon " + test_case_one.coupon + "to cart");
 
     //Calculates total and discount for testing
-    const expectedTotal = await helper.calculateExpectedTotal(page);
+    const discount = test_case_one.discount;
+    const expectedTotal = await helper.calculateExpectedTotal(discount,page);
     const actualTotal = await helper.getTotal(page);
-    const expectedDiscount = await helper.calculateDiscount(test_case_one.discount, page);
+    const expectedDiscount = await helper.calculateDiscount(discount, page);
     const actualDiscount = await helper.getDiscount(page);
 
     //Checks if discount has been applied correctly

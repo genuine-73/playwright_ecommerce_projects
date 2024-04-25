@@ -2,7 +2,6 @@ import {test as setup, expect} from '@playwright/test';
 import {STORAGE_STATE } from '../playwright.config';
 import PopUpsPOM from './POMclasses/PopUpsPOM';
 import NavBarPOM from './POMclasses/NavBarPOM';
-import AccountPOM from './POMclasses/AccountPOM';
 
 setup('Setup process', async ({page})=>{
 
