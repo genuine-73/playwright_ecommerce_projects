@@ -1,19 +1,14 @@
-import {Page, expect, Locator} from '@playwright/test'
+import { Page, Locator } from '@playwright/test'
 
 export default class PopUpsPOM {
-    //variable declaration
-    page: Page;
 
-    //Instantiation
+    page: Page;
+    dismissButton: Locator;
+
     constructor(page: Page){
         
         this.page = page;
-    }
-
-    //locator 
-    get dismissButton() {
-
-        return this.page.getByRole('link', { name: 'Dismiss' })
+        this.dismissButton = this.page.getByRole('link', { name: 'Dismiss' });
     }
 
     //service methods

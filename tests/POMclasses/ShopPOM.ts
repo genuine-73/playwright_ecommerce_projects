@@ -1,13 +1,12 @@
-import {Page, expect, Locator} from '@playwright/test'
+import { Page, Locator } from '@playwright/test'
 import CartPOM from './CartPOM';
 
 export default class ShopPOM {
-    //variable declaration
+
     page: Page;
     addToCartButton: Locator;
     viewCartButton: Locator;
 
-    //Instantiation
     constructor(page: Page, item:string){
         
         this.page = page;

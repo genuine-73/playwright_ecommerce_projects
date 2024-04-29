@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="20.334439">
-<testsuite name="global.teardown.ts" timestamp="2024-04-25T09:32:45.590Z" hostname="teardown" tests="1" failures="0" skipped="0" time="3.019" errors="0">
-<testcase name="Teardown" classname="global.teardown.ts" time="3.019">
+<testsuites id="" name="" tests="4" failures="1" skipped="0" errors="0" time="26.843166999999998">
+<testsuite name="global.teardown.ts" timestamp="2024-04-29T11:49:11.799Z" hostname="teardown" tests="1" failures="0" skipped="0" time="1.484" errors="0">
+<testcase name="Teardown" classname="global.teardown.ts" time="1.484">
 <system-out>
 <![CDATA[Now in global teardown
 Successfully closed the website
@@ -8,23 +8,47 @@ Successfully closed the website
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="global.setup.ts" timestamp="2024-04-25T09:32:45.590Z" hostname="setup" tests="1" failures="0" skipped="0" time="4.755" errors="0">
-<testcase name="Setup process" classname="global.setup.ts" time="4.755">
+<testsuite name="global.setup.ts" timestamp="2024-04-29T11:49:11.799Z" hostname="setup" tests="1" failures="0" skipped="0" time="6.249" errors="0">
+<testcase name="Setup process" classname="global.setup.ts" time="6.249">
 <system-out>
-<![CDATA[Successfully navigated to the ecommerce website
-Successfully dismissed a banner below
-Successfully navigated to my account
-Successfully logged into my account
+<![CDATA[Successfully logged into my account
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="ecommerce-playwright-project.spec.ts" timestamp="2024-04-25T09:32:45.590Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.869" errors="0">
-<testcase name="Test Case One: Applying Coupon" classname="ecommerce-playwright-project.spec.ts" time="8.869">
+<testsuite name="ecommerce-playwright-project.spec.ts" timestamp="2024-04-29T11:49:11.799Z" hostname="chromium" tests="2" failures="1" skipped="0" time="14.571" errors="0">
+<testcase name="Test Case One: Applying Coupon" classname="ecommerce-playwright-project.spec.ts" time="11.96">
+</testcase>
+<testcase name="Test Case Two: Placing Order" classname="ecommerce-playwright-project.spec.ts" time="2.611">
+<failure message="ecommerce-playwright-project.spec.ts:34:5 Test Case Two: Placing Order" type="FAILURE">
+<![CDATA[  [chromium] › ecommerce-playwright-project.spec.ts:34:5 › Test Case Two: Placing Order ────────────
+
+    Error: locator.click: Target page, context or browser has been closed
+    Call log:
+      - waiting for getByRole('link', { name: 'View cart' })
+
+
+       at POMclasses\ShopPOM.ts:23
+
+      21 |
+      22 |         await this.addToCartButton.click();
+    > 23 |         await this.viewCartButton.click();
+         |                                   ^
+      24 |         return new CartPOM(this.page);
+      25 |     }
+      26 | }
+
+        at ShopPOM.addItemToCart (C:\Users\GenuineMathew\playwright_project\tests\POMclasses\ShopPOM.ts:23:35)
+        at Object.cart (C:\Users\GenuineMathew\playwright_project\tests\fixtures\my-base-test.ts:33:22)
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\ecommerce-playwright-project-Test-Case-Two-Placing-Order-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 <system-out>
-<![CDATA[Successfully added an item to cart
-Successfully applied coupon edgewordsto cart
-Deletes coupon code
+<![CDATA[
+[[ATTACHMENT|..\test-results\ecommerce-playwright-project-Test-Case-Two-Placing-Order-chromium\video.webm]]
 ]]>
 </system-out>
 </testcase>

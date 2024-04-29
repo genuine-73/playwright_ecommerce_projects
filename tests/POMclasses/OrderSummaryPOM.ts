@@ -1,10 +1,9 @@
-import {Page, expect, Locator} from '@playwright/test'
+import { Page } from '@playwright/test'
 
 export default class OrderSummaryPOM {
-    //variable declaration
+
     page: Page;
 
-    //Instantiation
     constructor(page: Page){
 
         this.page = page;

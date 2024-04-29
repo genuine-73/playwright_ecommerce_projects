@@ -1,5 +1,4 @@
-import {test as teardown, expect} from '@playwright/test';
-import NavBarPOM from './POMclasses/NavBarPOM';
+import { test as teardown } from '@playwright/test';
 import AccountPOM from './POMclasses/AccountPOM';
 
 teardown('Teardown', async ({page}) => {
@@ -7,7 +6,7 @@ teardown('Teardown', async ({page}) => {
     console.log("Now in global teardown");
 
     //Navigating to the my account webpage
-    await page.goto('https://www.edgewordstraining.co.uk/demo-site/my-account/');
+    await page.goto('./my-account/');
 
     //Logout from Account
     const account = new AccountPOM(page);

@@ -1,36 +1,23 @@
-import {Page, Locator} from '@playwright/test'
+import { Page, Locator } from '@playwright/test'
 import CartPOM from './CartPOM';
 import ShopPOM from './ShopPOM';
-import AccountNavBarPOM from './AccountNavBarPOM';
 import AccountPOM from './AccountPOM';
 
 export default class NavBarPOM {
 
-    //variable declaration
     page: Page;
+    shop: Locator;
+    account: Locator;
+    cart: Locator;
 
-    //Instantiation
     constructor(page: Page){
 
         this.page = page;
+
+        this.shop = this.page.locator('#menu-main').getByRole('link', { name: 'Shop' });  
+        this.account = this.page.locator('#menu-main').getByRole('link', { name: 'My account' });
+        this.cart = this.page.locator('#menu-main').getByRole('link', {name: 'Cart'});
     }
-
-    //Locators
-    get shop() {
-
-        return this.page.locator('#menu-main').getByRole('link', { name: 'Shop' });  
-    }
-
-    get account() {
-
-        return this.page.locator('#menu-main').getByRole('link', { name: 'My account' });   
-    }
-
-    get cart(){
-
-        return this.page.locator('#menu-main').getByRole('link', {name: 'Cart'});
-    }
-
     //Service methods
 
     async goToAccountSuccess(): Promise<AccountPOM>{

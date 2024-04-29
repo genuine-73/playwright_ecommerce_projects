@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "c:\\Users\\GenuineMathew\\playwright_project\\playwright.config.ts",
-    "rootDir": "c:/Users/GenuineMathew/playwright_project/tests",
+    "configFile": "C:\\Users\\GenuineMathew\\playwright_project\\playwright.config.ts",
+    "rootDir": "C:/Users/GenuineMathew/playwright_project/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -39,12 +39,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "outputDir": "C:/Users/GenuineMathew/playwright_project/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "setup",
         "name": "setup",
-        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testDir": "C:/Users/GenuineMathew/playwright_project/tests",
         "testIgnore": [],
         "testMatch": [
           "/global\\.setup\\.ts/"
@@ -52,12 +52,12 @@
         "timeout": 60000
       },
       {
-        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "outputDir": "C:/Users/GenuineMathew/playwright_project/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "teardown",
         "name": "teardown",
-        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testDir": "C:/Users/GenuineMathew/playwright_project/tests",
         "testIgnore": [],
         "testMatch": [
           "/global\\.teardown\\.ts/"
@@ -65,12 +65,12 @@
         "timeout": 60000
       },
       {
-        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "outputDir": "C:/Users/GenuineMathew/playwright_project/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chromium",
         "name": "chromium",
-        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testDir": "C:/Users/GenuineMathew/playwright_project/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -78,12 +78,12 @@
         "timeout": 60000
       },
       {
-        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "outputDir": "C:/Users/GenuineMathew/playwright_project/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "firefox",
         "name": "firefox",
-        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testDir": "C:/Users/GenuineMathew/playwright_project/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -91,12 +91,12 @@
         "timeout": 60000
       },
       {
-        "outputDir": "c:/Users/GenuineMathew/playwright_project/test-results",
+        "outputDir": "C:/Users/GenuineMathew/playwright_project/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "webkit",
         "name": "webkit",
-        "testDir": "c:/Users/GenuineMathew/playwright_project/tests",
+        "testDir": "C:/Users/GenuineMathew/playwright_project/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -132,7 +132,7 @@
                 {
                   "workerIndex": 2,
                   "status": "passed",
-                  "duration": 3019,
+                  "duration": 1484,
                   "errors": [],
                   "stdout": [
                     {
@@ -144,7 +144,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-25T09:33:02.720Z",
+                  "startTime": "2024-04-29T11:49:36.481Z",
                   "attachments": []
                 }
               ],
@@ -153,7 +153,7 @@
           ],
           "id": "05ed36a5ffdcbe241e99-6a59947d0855f7e68747",
           "file": "global.teardown.ts",
-          "line": 5,
+          "line": 4,
           "column": 9
         }
       ]
@@ -179,25 +179,16 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 4755,
+                  "duration": 6249,
                   "errors": [],
                   "stdout": [
-                    {
-                      "text": "Successfully navigated to the ecommerce website\n"
-                    },
-                    {
-                      "text": "Successfully dismissed a banner below\n"
-                    },
-                    {
-                      "text": "Successfully navigated to my account\n"
-                    },
                     {
                       "text": "Successfully logged into my account\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-25T09:32:46.489Z",
+                  "startTime": "2024-04-29T11:49:12.479Z",
                   "attachments": []
                 }
               ],
@@ -232,22 +223,12 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 8869,
+                  "duration": 11960,
                   "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Successfully added an item to cart\n"
-                    },
-                    {
-                      "text": "Successfully applied coupon edgewordsto cart\n"
-                    },
-                    {
-                      "text": "Deletes coupon code\n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-04-25T09:32:52.695Z",
+                  "startTime": "2024-04-29T11:49:20.480Z",
                   "attachments": []
                 }
               ],
@@ -256,7 +237,69 @@
           ],
           "id": "223d74849d60f98001be-d759795987f5967eddac",
           "file": "ecommerce-playwright-project.spec.ts",
-          "line": 10,
+          "line": 8,
+          "column": 5
+        },
+        {
+          "title": "Test Case Two: Placing Order",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "failed",
+                  "duration": 2611,
+                  "error": {
+                    "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for getByRole('link', { name: 'View cart' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for getByRole('link', { name: 'View cart' })\u001b[22m\n\n    at ShopPOM.addItemToCart (C:\\Users\\GenuineMathew\\playwright_project\\tests\\POMclasses\\ShopPOM.ts:23:35)\n    at Object.cart (C:\\Users\\GenuineMathew\\playwright_project\\tests\\fixtures\\my-base-test.ts:33:22)",
+                    "location": {
+                      "file": "C:\\Users\\GenuineMathew\\playwright_project\\tests\\POMclasses\\ShopPOM.ts",
+                      "column": 35,
+                      "line": 23
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mPOMclasses\\ShopPOM.ts:23\n\n\u001b[0m \u001b[90m 21 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39maddToCartButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mviewCartButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m         \u001b[36mreturn\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mCartPOM\u001b[39m(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\GenuineMathew\\playwright_project\\tests\\POMclasses\\ShopPOM.ts",
+                        "column": 35,
+                        "line": 23
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for getByRole('link', { name: 'View cart' })\u001b[22m\n\n\n\u001b[90m   at \u001b[39mPOMclasses\\ShopPOM.ts:23\n\n\u001b[0m \u001b[90m 21 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39maddToCartButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mviewCartButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m         \u001b[36mreturn\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mCartPOM\u001b[39m(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m }\u001b[0m\n\n\u001b[2m    at ShopPOM.addItemToCart (C:\\Users\\GenuineMathew\\playwright_project\\tests\\POMclasses\\ShopPOM.ts:23:35)\u001b[22m\n\u001b[2m    at Object.cart (C:\\Users\\GenuineMathew\\playwright_project\\tests\\fixtures\\my-base-test.ts:33:22)\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-04-29T11:49:32.976Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\GenuineMathew\\playwright_project\\test-results\\ecommerce-playwright-project-Test-Case-Two-Placing-Order-chromium\\video.webm"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\GenuineMathew\\playwright_project\\tests\\POMclasses\\ShopPOM.ts",
+                    "column": 35,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "223d74849d60f98001be-2e126ec0867eaea5587e",
+          "file": "ecommerce-playwright-project.spec.ts",
+          "line": 34,
           "column": 5
         }
       ]
@@ -264,11 +307,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-04-25T09:32:45.529Z",
-    "duration": 20344.41,
+    "startTime": "2024-04-29T11:49:11.531Z",
+    "duration": 27076.491,
     "expected": 3,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }

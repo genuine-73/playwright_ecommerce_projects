@@ -1,8 +1,7 @@
-import {Page, Locator} from '@playwright/test'
+import { Page, Locator } from '@playwright/test'
 
 export default class AccountNavBarPOM {
     
-    //variable declaration
     page: Page;
 
     constructor(page: Page) {
