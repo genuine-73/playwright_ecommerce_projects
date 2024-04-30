@@ -5,7 +5,8 @@ export class HelperMethods {
     
     //Converts the string to int
     static async convertToInt(num: string): Promise<number> {
-
-        return Math.round(parseFloat(num.substring(1)) * 100);
+        // Remove non-numeric characters
+        const numericString = Number(num.replace(/[^0-9.-]+/g, ''));
+        return numericString;
     }
 }

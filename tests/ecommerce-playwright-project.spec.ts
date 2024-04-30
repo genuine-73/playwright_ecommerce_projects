@@ -59,7 +59,7 @@ test("Test Case Two: Placing Order", async function({ homePage, cart, page }){
     
     //Get order number from Order Summary page
     const orderSummary = await checkout.placeOrder();
-    const orderNo = await orderSummary.Ordernumber;
+    const orderNo = await orderSummary.getOrderNumber();
 
     //Navigate to account
     const account = await homePage.goToAccountSuccess();
@@ -67,7 +67,7 @@ test("Test Case Two: Placing Order", async function({ homePage, cart, page }){
     //Get order number from My account -> order page
     await account.goToOrders();
     const orderTab = new OrderAccountPOM(page);
-    const latestOrderNo = await orderTab.latestOrderNumber;
+    const latestOrderNo = await orderTab.getOrderNumber();
 
     //Check if the order numbers match
     expect(orderNo, `Order number from summary page: ${orderNo} | Order number from Orders Page ${latestOrderNo}`)

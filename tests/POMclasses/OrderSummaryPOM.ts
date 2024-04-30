@@ -1,17 +1,19 @@
-import { Page } from '@playwright/test'
+import { Locator, Page } from '@playwright/test'
 
 export default class OrderSummaryPOM {
 
     page: Page;
-
+    orderNumber: Locator;
+    
     constructor(page: Page){
 
         this.page = page;
+        this.orderNumber = this.page.locator('.woocommerce-order-overview__order > strong');
     }
 
     //Locators
-    get Ordernumber() {
+    async getOrderNumber() {
 
-        return this.page.locator('.woocommerce-order-overview__order > strong').innerText();
+        return this.orderNumber.innerText();
     }
 }
