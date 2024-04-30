@@ -26,10 +26,10 @@ export default class CartPOM {
         this.couponCodeField = this.page.getByPlaceholder('Coupon code');
         this.cartIsEmptyBanner = this.page.getByText('Your cart is currently empty.');
         this.applyCouponButton = this.page.getByRole('button', { name: 'Apply coupon'});
-        this.cartSubtotal = this.page.locator(".cart-subtotal > td:nth-child(2) > span:nth-child(1)")
-        this.cartDiscount = this.page.locator(".cart-discount > td:nth-child(2) > span:nth-child(1)")
-        this.cartShippingCost = this.page.locator("#shipping_method > li > label > span")
-        this.cartTotal =  this.page.locator(".order-total > td:nth-child(2) > strong:nth-child(1) > span:nth-child(1)")
+        this.cartSubtotal = this.page.locator(".cart-subtotal .woocommerce-Price-amount")
+        this.cartDiscount = this.page.locator(".cart-discount .woocommerce-Price-amount")
+        this.cartShippingCost = this.page.locator("#shipping_method .woocommerce-Price-amount")
+        this.cartTotal =  this.page.locator(".order-total .woocommerce-Price-amount")
         this.removeCoupon = this.page.getByText("[Remove]");
         this.proceedToCheckoutButton = this.page.getByText('Proceed to checkout');
         this.removeItem = this.page.getByLabel('Remove this item');

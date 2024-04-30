@@ -14,7 +14,7 @@ export default class AccountNavBarPOM {
     }
 
     get orderTabButton() {
-        return this.page.getByRole('link', { name: ' Orders' });
+        return this.page.getByRole('link', { name: /Orders/ });
     }
 
     //service methods

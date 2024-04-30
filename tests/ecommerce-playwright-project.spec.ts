@@ -73,3 +73,4 @@ test("Test Case Two: Placing Order", async function({ homePage, cart, page }){
     expect(orderNo, `Order number from summary page: ${orderNo} | Order number from Orders Page ${latestOrderNo}`)
     .toContain(latestOrderNo.substring(1));
 });
+                                     
